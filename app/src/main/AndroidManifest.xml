@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="org.reallysimpleapps.eggtimer">
+
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission
+        android:name="android.hardware.camera2"
+        android:required="false" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
+
+    <application
+
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity
+
+            android:name="org.reallysimpleapps.eggtimer.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme">
+
+            <meta-data
+                android:name="com.google.android.gms.version"
+                android:value="@integer/google_play_services_version" />
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".About"
+            android:label="@string/About_Perfect_Egg_Timer"
+            android:parentActivityName="org.reallysimpleapps.eggtimer.MainActivity">
+        </activity>
+
+        <activity
+            android:name=".EggPhoto"
+            android:label="Time's Up"
+            android:parentActivityName="org.reallysimpleapps.eggtimer.MainActivity" >
+
+        </activity>
+
+
+    </application>
+
+</manifest>

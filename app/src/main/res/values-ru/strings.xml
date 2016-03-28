@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Egg Timer Egg Совершенная</string>
+    <string name="Your_egg_is_boiled_and_ready_to_enjoy">Ваше яйцо вареное и готовы наслаждаться</string>
+    <string name="Again"> Еще раз?</string>
+    <string name="Egg_Timer_Alert">Оповещение Таймер Яйцо</string>
+    <string name="Go">Идти</string>
+    <string name="go">Идти</string>
+    <string name="Stop">Стоп</string>
+    <string name="slide_to_set_egg_boil_time">Авто для установки времени яйца кипятить</string>
+    <string name="about">About</string>
+    <string name="you_ve_just_cooked_your_perfect_egg_take_a_snap_and_share_it_with_your_friends_using_perfectegg"> Вы только что приготовили свой ​​идеальный яйцо . Возьмите оснастки и поделиться им с друзьями с помощью #PerfectEgg</string>
+    <string name="time_s_up">Время вышло!</string>
+    <string name="snap_your_egg_and_share">Привязать яйцо и поделиться !</string>
+    <string name="photo">Фото</string>
+    <string name="the_perfect_egg_timer"> Совершенная Egg Timer</string>
+    <string name="please_share_us">Пожалуйста, поделитесь с нами</string>
+    <string name="okay_we_admit_it_we_re_totally_obssessed_with_eggs_we_simply_love_em">Хорошо, мы это признать ... мы полностью obssessed с яйцами . Мы просто любим их</string>
+    <string name="but_hey_what_could_be_better_than_a_perfectly_cooked_egg_hard_or_soft_boiled_you_decide_but_how_should_you_cook_your_perfect_egg_we_ve_got_some_advice_for_you"> Но эй , что может быть лучше , чем тщательно приготовленное яйцо . Жесткий или всмятку , вы решаете . Но как вы должны приготовить идеальный яйцо ? У нас есть несколько советов для вас ...</string>
+    <string name="bring_the_water_up_to_a_boil_then_lower_it_to_a_rapid_simmer_add_the_eggs_to_the_pot_and_then_click_go_to_start_timing_if_you_re_just_cooking_one_or_two_eggs_five_minutes_is_perfect_for_a_runny_yolk_or_cook_as_long_as_seven_minutes_for_a_more_firmly_set_but_still_spoonable_yolk"> Доведите воду до кипения, затем опустите ее к быстрому кипят. Добавьте яйца в кастрюлю , а затем нажмите кнопку GO! чтобы начать отсчет времени. Если вы только варить одно или два яйца , пять минут идеально подходит для жидкого желтка , или варить до тех пор , как семь минут для более надежно установлен , но по-прежнему , желток ложкой .</string>
+    <string name="back_to_timer">Вернуться к таймеру</string>
+    <string name="share">доля</string>
+    <string name="About_Perfect_Egg_Timer">О Совершенная Egg Timer</string>
+    <string name="invitation_message"> " Я Lovin \' этот Совершенный Free Egg Timer App. Дайте ему идти! "</string>
+    <string name="invitation_subject"> Попробуйте это большое приложение Egg Timer</string>
+    <string name="invitation_title">Отправить Egg Timer Пригласить</string>
+    <string name="invite"> Отправить приглашения</string>
+    <string name="invite_dialog_title"> Вы получили приглашение</string>
+    <string name="invite_friends"> Пригласить друзей</string>
+    <string name="send_failed">Не удалось отправить приглашения</string>
+</resources>

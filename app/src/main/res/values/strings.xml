@@ -1,0 +1,54 @@
+<resources>
+    <string name="app_name">Perfect Egg Timer</string>
+    <string name="Egg_Timer_Alert">Egg Timer Alert!</string>
+    <string name="Your_egg_is_boiled_and_ready_to_enjoy">Perfect Egg Ready. Take snap to share</string>
+    <string name="Stop">Stop</string>
+    <string name="Again">Again?</string>
+    <string name="Go">Go!</string>
+    <string name="slide_to_set_egg_boil_time">Slide to set egg boil time</string>
+    <string name="go">Go!</string>
+    <string name="about">About</string>
+    <string name="photo">photo</string>
+    <string name="time_s_up">Time\'s up!</string>
+    <string name="you_ve_just_cooked_your_perfect_egg_take_a_snap_and_share_it_with_your_friends_using_perfectegg">You\'ve just cooked your perfect egg. Take a snap and share it with your friends using #PerfectEgg</string>
+    <string name="snap_your_egg_and_share">Snap your egg and share!</string>
+    <string name="the_perfect_egg_timer">The Perfect Egg Timer</string>
+    <string name="okay_we_admit_it_we_re_totally_obssessed_with_eggs_we_simply_love_em">Okay, we admit it... we\'re totally obssessed with eggs. We simply love \'em!</string>
+    <string name="but_hey_what_could_be_better_than_a_perfectly_cooked_egg_hard_or_soft_boiled_you_decide_but_how_should_you_cook_your_perfect_egg_we_ve_got_some_advice_for_you">But hey, what could be better than a perfectly cooked egg. Hard or soft boiled, you decide. But how should you cook your perfect egg? We\'ve got some advice for you...</string>
+    <string name="bring_the_water_up_to_a_boil_then_lower_it_to_a_rapid_simmer_add_the_eggs_to_the_pot_and_then_click_go_to_start_timing_if_you_re_just_cooking_one_or_two_eggs_five_minutes_is_perfect_for_a_runny_yolk_or_cook_as_long_as_seven_minutes_for_a_more_firmly_set_but_still_spoonable_yolk">Bring the water up to a boil, then lower it to a rapid simmer. Add the eggs to the pot, and then click GO! to start timing. If you\'re just cooking one or two eggs, five minutes is perfect for a runny yolk, or cook as long as seven minutes for a more firmly set, but still spoonable, yolk.</string>
+    <string name="please_share_us">Please share us</string>
+    <string name="back_to_timer">Back to timer</string>
+    <string name="share">share</string>
+
+
+        <string name="action_deep_link" translatable="false">
+        com.google.android.gms.samples.appinvite.DEEP_LINK_ACTION
+    </string>
+
+    <string name="invite">Send invitations!</string>
+    <string name="welcome" translatable="false">App Invite\nQuickstart</string>
+    <string name="referrer_hint" translatable="false" >Deep link not provided</string>
+    <string name="invitation_id_default" translatable="false" >Invitation ID not set</string>
+    <string name="invite_friends">Invite Friends</string>
+
+    <string name="invitation_title">Send Egg Timer Invite</string>
+    <string name="invitation_message">Get this Perfect Egg Timer for your phone</string>
+    <string name="invitation_deep_link" translatable="false" >https://play.google.com/store/apps/details?id=org.reallysimpleapps.eggtimer</string>
+    <string name="invitation_custom_image" translatable="false">http://www.reallysimpleapps.org/wp-content/uploads/2016/03/hi-res-512-x-512-2.png</string>
+    <string name="invitation_cta" translatable="false" >Install!</string>
+    <string name="invitation_subject">Try this great Egg Timer app!</string>
+
+    <string name="deep_link_fmt" formatted="false" translatable="false" >Deep Link: %s</string>
+    <string name="invitation_id_fmt" formatted="false" translatable="false" >Invitation ID: %s</string>
+
+    <string name="sent_invitations_fmt" formatted="false" translatable="false" >Sent %d invitations</string>
+    <string name="send_failed">Sending invitations failed</string>
+    <string name="invite_dialog_title">You got an invitation!</string>
+
+    <string name="google_play_services_error" translatable="false" >Google Play Services Error</string>
+    <string name="custom_invite" translatable="false" >Custom Invite</string>
+
+    <string name="About_Perfect_Egg_Timer">About Perfect Egg Timer</string>
+    <string name="deep_link_default" translatable="false">https://play.google.com/store/apps/details?id=org.reallysimpleapps.eggtimer</string>
+
+</resources>

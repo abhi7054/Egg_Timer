@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Eieruhr perfekte Ei</string>
+    <string name="slide_to_set_egg_boil_time">Schieben Sie zum Ei Kochzeit einstellen</string>
+    <string name="Again">Aufs Neue</string>
+    <string name="Egg_Timer_Alert">Eieruhr Alarm</string>
+    <string name="Go">Gehen</string>
+    <string name="Stop">Halt</string>
+    <string name="go">Gehen</string>
+    <string name="Your_egg_is_boiled_and_ready_to_enjoy"> Ihr Ei gekocht und bereit zu genießen</string>
+    <string name="about">About</string>
+    <string name="photo">Foto</string>
+    <string name="snap_your_egg_and_share">Rasten Sie Ihr Ei und mit anderen teilen !</string>
+    <string name="time_s_up"> Die Zeit ist vorbei!</string>
+    <string name="you_ve_just_cooked_your_perfect_egg_take_a_snap_and_share_it_with_your_friends_using_perfectegg">Sie haben Ihr perfektes Ei nur gekocht . Nehmen Sie einen Snap und teilen Sie sie mit Ihren Freunden über #PerfectEgg</string>
+    <string name="back_to_timer">Zurück zur Timer</string>
+    <string name="bring_the_water_up_to_a_boil_then_lower_it_to_a_rapid_simmer_add_the_eggs_to_the_pot_and_then_click_go_to_start_timing_if_you_re_just_cooking_one_or_two_eggs_five_minutes_is_perfect_for_a_runny_yolk_or_cook_as_long_as_seven_minutes_for_a_more_firmly_set_but_still_spoonable_yolk">Bringen Sie das Wasser bis zum Kochen bringen , dann zu einem schnellen simmer senken. Fügen Sie die Eier in den Topf , und klicken Sie dann auf GO! zu starten Timing. Wenn Sie nur ein oder zwei Eier kochen , ist fünf Minuten perfekt für eine laufende Eigelb , oder kochen , solange sieben Minuten für ein fester gesetzt , aber immer noch löffelbare , Eigelb.</string>
+    <string name="but_hey_what_could_be_better_than_a_perfectly_cooked_egg_hard_or_soft_boiled_you_decide_but_how_should_you_cook_your_perfect_egg_we_ve_got_some_advice_for_you">Aber hey, könnte was besser sein als ein perfekt gekochtes Ei . Hart oder weich gekocht , entscheiden Sie. Aber wie sollten Sie Ihr perfektes Ei kochen? Wir haben einige Tipps für Sie bekam ...</string>
+    <string name="okay_we_admit_it_we_re_totally_obssessed_with_eggs_we_simply_love_em"> Okay, wir zugeben, dass es ... Wir sind total obssessed mit Eiern. Wir lieben einfach \'em!</string>
+    <string name="please_share_us">Bitte teilen Sie uns</string>
+    <string name="the_perfect_egg_timer">Die perfekte Eieruhr</string>
+    <string name="share">Aktie</string>
+    <string name="About_Perfect_Egg_Timer"> Über perfekte Eieruhr</string>
+    <string name="invitation_message"> "Ich bin lovin \' diese perfekte Gratis Eieruhr App. Geben Sie ihm einen gehen!"</string>
+    <string name="invitation_subject">Versuchen Sie, diese große Ei-Timer -App!</string>
+    <string name="invitation_title">Senden Eieruhr einladen</string>
+    <string name="invite"> Einladungen verschicken!</string>
+    <string name="invite_dialog_title">Sie erhielten eine Einladung !</string>
+    <string name="invite_friends">Freunde einladen</string>
+    <string name="send_failed"> Senden Einladungen fehlgeschlagen</string>
+</resources>

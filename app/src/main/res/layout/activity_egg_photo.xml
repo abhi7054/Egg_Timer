@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:minHeight="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="56dp">
+    </android.support.v7.widget.Toolbar>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginTop="16dp"
+        android:textSize="20sp"
+        android:textColor="#616161"
+        android:text="@string/you_ve_just_cooked_your_perfect_egg_take_a_snap_and_share_it_with_your_friends_using_perfectegg" />
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="4"
+        android:layout_marginBottom="24dp"
+        android:layout_marginTop="24dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/eggframed">
+
+    </ImageView>
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:layout_gravity="center_horizontal"
+        android:tag="0"
+        android:onClick="takeYourSnap"
+        android:text="@string/snap_your_egg_and_share">
+
+            </Button>
+
+
+</LinearLayout>
+

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name"> Egg Timer perfecto huevo</string>
+    <string name="Again">¿De nuevo?</string>
+    <string name="Egg_Timer_Alert">Egg Timer Alerta !</string>
+    <string name="Go">¡vamos!</string>
+    <string name="Stop">Detener</string>
+    <string name="Your_egg_is_boiled_and_ready_to_enjoy">Su huevo se hierve y listo para disfrutar</string>
+    <string name="go">¡vamos!</string>
+    <string name="slide_to_set_egg_boil_time"> Deslizar para ajustar el tiempo de ebullición de huevo</string>
+    <string name="about">About</string>
+    <string name="you_ve_just_cooked_your_perfect_egg_take_a_snap_and_share_it_with_your_friends_using_perfectegg">Usted sólo ha cocinado el huevo perfecto. Tomar una instantánea y compartirlo con tus amigos usando #PerfectEgg</string>
+    <string name="photo">foto</string>
+    <string name="snap_your_egg_and_share">Ajustar el huevo y compartir !</string>
+    <string name="time_s_up"> ¡Se acabó el tiempo</string>
+    <string name="back_to_timer"> Volver al temporizador</string>
+    <string name="bring_the_water_up_to_a_boil_then_lower_it_to_a_rapid_simmer_add_the_eggs_to_the_pot_and_then_click_go_to_start_timing_if_you_re_just_cooking_one_or_two_eggs_five_minutes_is_perfect_for_a_runny_yolk_or_cook_as_long_as_seven_minutes_for_a_more_firmly_set_but_still_spoonable_yolk">Llevar el agua hasta que hierva , luego baje a fuego lento rápido . Añadir los huevos a la olla y , a continuación, haga clic en GO ! para iniciar el cronometraje . Si acaba de cocinar uno o dos huevos , cinco minutos es perfecto para una fatiga yema , o cocinar hasta siete minutos para una más firmemente establecido , pero todavía puede comer con cuchara , yema de huevo.</string>
+    <string name="but_hey_what_could_be_better_than_a_perfectly_cooked_egg_hard_or_soft_boiled_you_decide_but_how_should_you_cook_your_perfect_egg_we_ve_got_some_advice_for_you"> Pero bueno , ¿qué podría ser mejor que un huevo perfectamente cocinado . Duro o pasado por agua , a decidir. Pero ¿cómo se debe cocinar su huevo perfecto? Tenemos algunos consejos para usted ...</string>
+    <string name="okay_we_admit_it_we_re_totally_obssessed_with_eggs_we_simply_love_em">De acuerdo, lo admitimos ... estamos totalmente Obssessed con huevos . Simplemente me encanta \' em</string>
+    <string name="please_share_us">Por favor, comparta con nosotros</string>
+    <string name="the_perfect_egg_timer">El contador de tiempo del huevo perfecto</string>
+    <string name="share">compartir</string>
+    <string name="About_Perfect_Egg_Timer">Acerca de Perfect Egg Timer</string>
+    <string name="invitation_message"> " Estoy amando a este temporizador aplicación perfecta del huevo libre . Dale una oportunidad "</string>
+    <string name="invitation_subject">Prueba esta gran aplicación Egg Timer</string>
+    <string name="invitation_title"> Enviar Egg Timer Invitar</string>
+    <string name="invite"> ¡Enviar invitaciones</string>
+    <string name="invite_dialog_title">Tienes una invitación</string>
+    <string name="invite_friends">Invitar a amigos</string>
+    <string name="send_failed">el envío de invitaciones fracasaron</string>
+</resources>

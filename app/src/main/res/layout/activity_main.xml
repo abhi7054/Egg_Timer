@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    tools:context="org.reallysimpleapps.eggtimer.MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:minHeight="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        app:contentInsetEnd="0dp"
+        app:contentInsetStart="0dp">
+    </android.support.v7.widget.Toolbar>
+
+
+    <ImageView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/imageViewEgg"
+        android:src="@drawable/egg1"
+        android:layout_marginTop="56dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:scaleType="centerCrop" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:text="@string/slide_to_set_egg_boil_time"
+        android:textColor="#FFF3E0"
+        android:id="@+id/slideBartextView"
+        android:layout_alignWithParentIfMissing="false"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="72dp" />
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:id="@+id/timerSeekBar"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="96dp"
+        android:layout_centerHorizontal="true"
+        android:thumbTint="@color/colorAccent"
+        android:progressTint="@color/colorPrimary"
+        android:indeterminate="false"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textStyle="bold"
+        android:layout_centerVertical="true"
+        android:id="@+id/timerTextView"
+        android:textSize="80sp"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/go"
+        android:id="@+id/controllerBtn"
+        android:onClick="controlTimer"
+        android:layout_below="@+id/timerTextView"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/inviteFriends"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/tellfriends"
+        android:onClick="onInviteClicked"
+        android:layout_toRightOf="@+id/controllerBtn"
+
+        android:layout_toEndOf="@+id/controllerBtn"
+        android:visibility="invisible" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Make this time my default"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#FFF3E0"
+        android:id="@+id/makeDefaultTextView"
+        android:layout_below="@+id/timerSeekBar"
+        android:layout_centerHorizontal="true"
+        android:textSize="14sp"
+
+        android:onClick="makeDefaultTime" />
+
+
+</RelativeLayout>
