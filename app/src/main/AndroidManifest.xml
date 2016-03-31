@@ -45,7 +45,6 @@
             android:name=".EggPhoto"
             android:label="Time's Up"
             android:parentActivityName="org.reallysimpleapps.eggtimer.MainActivity" >
-
         </activity>
 
 

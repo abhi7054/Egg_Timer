@@ -3,6 +3,7 @@ package org.reallysimpleapps.eggtimer;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -23,7 +24,6 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.appinvite.AppInvite;
 import com.google.android.gms.appinvite.AppInviteInvitation;
 import com.google.android.gms.appinvite.AppInviteInvitationResult;
@@ -36,7 +36,7 @@ import com.google.android.gms.ads.AdView;
 
 // TODO Add settings menu and add about app and about making the perfect app, plus share and rate
 
-public class MainActivity extends AppCompatActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
     SeekBar timerSeekBar;
     TextView timerTextView;
@@ -50,6 +50,13 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
     Vibrator vibrator;
     private static final int REQUEST_INVITE = 0;
     int defaultTime;
+    Button mins3;
+    Button mins4;
+    Button mins5;
+    Button mins6;
+    Button mins7;
+    int timesUsed;
+
 
 
     public void resetTimer() {
@@ -87,8 +94,26 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         timerSeekBar.setEnabled(true);
         counterIsActive = false;
 
+        // Find out how many times app has run by checking SharedPreferences file
+        SharedPreferences sharedPreferences = getSharedPreferences("MyData", Context.MODE_PRIVATE);
+        timesUsed = sharedPreferences.getInt("numberOfUses", 0);
+        timesUsed++; // add 1 to times used and store new figure in SharedPreferences
+
+        // Store another use of timer to Shared Preferences
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt("numberOfUses", timesUsed);
+        editor.commit();
+
+        if(timesUsed % 5 == 0){
         // Display invite friends App Invite button
         inviteFriends.setVisibility(View.VISIBLE);
+        }
+        else {
+            // Potentially request a Google Play rating, though will depend on AppRater settings
+            new AppRater(this).show();
+        }
+
+
     }
 
     public void updateTimer(int secondsLeft) {
@@ -110,6 +135,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         if (controlBtnIsAgain) {
             controlBtnIsAgain = false;
             egg.setImageResource(R.drawable.egg1);
+            inviteFriends.setVisibility(View.INVISIBLE);
             resetTimer();
 
         } else if (counterIsActive == false) {
@@ -178,6 +204,13 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        mins3 = (Button) findViewById(R.id.min3);
+        mins4 = (Button) findViewById(R.id.min4);
+        mins5 = (Button) findViewById(R.id.min5);
+        mins6 = (Button) findViewById(R.id.min6);
+        mins7 = (Button) findViewById(R.id.min7);
+
 
         AdView mAdView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
@@ -373,6 +406,49 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         long[] pattern = {0, 150}; // short vibrate pattern for setting default time
         vibrator.vibrate(pattern, -1); // start vibrate
 
+    }
+
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.min3:
+                setTime(180);
+                break;
+
+            case R.id.min4:
+                setTime(240);
+                break;
+
+            case R.id.min5:
+                setTime(300);
+                break;
+
+            case R.id.min6:
+                setTime(360);
+                break;
+
+            case R.id.min7:
+                setTime(420);
+                break;
+        }
+    }
+
+    public void setTime(int secondsToSet){
+
+        int timeCheck = secondsToSet;
+        timerSeekBar.setProgress(timeCheck);
+        // convert seconds to mins and secs.
+        int minutes = timeCheck / 60;
+        int seconds = timeCheck - minutes * 60;
+        String secondString = Integer.toString(seconds);
+        if (seconds <= 9) {
+            secondString = "0" + secondString;
+        }
+        timerTextView.setText(((Integer.toString(minutes) + ":" + secondString)));
+
+        long[] pattern = {0, 50}; // short vibrate pattern for setting default time
+        vibrator.vibrate(pattern, -1); // start vibrate
     }
 
 }

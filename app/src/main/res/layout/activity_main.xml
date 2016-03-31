@@ -5,7 +5,6 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-
     tools:context="org.reallysimpleapps.eggtimer.MainActivity">
 
     <android.support.v7.widget.Toolbar
@@ -46,7 +45,7 @@
         android:layout_height="30dp"
         android:id="@+id/timerSeekBar"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="120dp"
         android:layout_centerHorizontal="true"
         android:thumbTint="@color/colorAccent"
         android:progressTint="@color/colorPrimary"
@@ -61,7 +60,7 @@
         android:textStyle="bold"
         android:layout_centerVertical="true"
         android:id="@+id/timerTextView"
-        android:textSize="80sp"
+        android:textSize="86sp"
         android:layout_centerHorizontal="true" />
 
     <Button
@@ -71,13 +70,15 @@
         android:id="@+id/controllerBtn"
         android:onClick="controlTimer"
         android:layout_below="@+id/timerTextView"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:textSize="20sp" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/inviteFriends"
         android:layout_alignParentBottom="true"
+        android:layout_marginBottom="75dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:src="@drawable/tellfriends"
@@ -94,7 +95,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="#FFF3E0"
         android:id="@+id/makeDefaultTextView"
-        android:layout_below="@+id/timerSeekBar"
+        android:layout_below="@+id/slideBartextView"
         android:layout_centerHorizontal="true"
         android:textSize="14sp"
         android:onClick="makeDefaultTime" />
@@ -108,6 +109,71 @@
         ads:adSize="SMART_BANNER"
         ads:adUnitId="@string/banner_ad_unit_id">
     </com.google.android.gms.ads.AdView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/timerSeekBar"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal">
+
+
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3min"
+        android:id="@+id/min3"
+        android:layout_below="@+id/timerSeekBar"
+        android:onClick="onClick">
+
+    </Button>
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4min"
+            android:id="@+id/min4"
+            android:layout_below="@+id/timerSeekBar"
+            android:onClick="onClick">
+        </Button>
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5min"
+            android:id="@+id/min5"
+            android:layout_below="@+id/timerSeekBar"
+            android:onClick="onClick">
+        </Button>
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="6min"
+            android:id="@+id/min6"
+            android:layout_below="@+id/timerSeekBar"
+            android:onClick="onClick">
+        </Button>
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7min"
+            android:id="@+id/min7"
+            android:layout_below="@+id/timerSeekBar"
+            android:onClick="onClick">
+        </Button>
+
+
+
+
+
+    </LinearLayout>
 
 
 </RelativeLayout>
