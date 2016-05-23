@@ -72,13 +72,18 @@
         android:text="@string/go"
         android:textSize="20sp" />
 
-    <Button
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/let_us_calculate_for_you"
         android:id="@+id/advancedBtn"
+        android:clickable="true"
         android:onClick="goAdvanced"
         android:textAllCaps="false"
+        android:textSize="18sp"
+        android:textColor="@color/colorAccent"
+        android:textStyle="bold"
+        android:layout_marginTop="8dp"
         android:layout_below="@+id/controllerBtn"
         android:layout_centerHorizontal="true"/>
 
@@ -98,7 +103,7 @@
         android:visibility="invisible" />
 
     <TextView
-        android:id="@+id/makeDefaultTextView"
+        android:id="@+id/selectFromTheFollowing"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/slideBartextView"
@@ -132,37 +137,37 @@
             android:layout_below="@+id/timerSeekBar"
             android:layout_column="0"
             android:layout_row="0"
-            android:text="3min">
+            android:text="3min"/>
 
-        </Button>
+
 
         <Button
             android:id="@+id/min4"
             style="@style/CustomTimeButtons"
             android:layout_column="1"
             android:layout_row="0"
-            android:text="4min"></Button>
+            android:text="4min"/>
 
         <Button
             android:id="@+id/min5"
             style="@style/CustomTimeButtons"
             android:layout_column="2"
             android:layout_row="0"
-            android:text="5min"></Button>
+            android:text="5min"/>
 
         <Button
             android:id="@+id/min6"
             style="@style/CustomTimeButtons"
             android:layout_column="3"
             android:layout_row="0"
-            android:text="6min"></Button>
+            android:text="6min"/>
 
         <Button
             android:id="@+id/min7"
             style="@style/CustomTimeButtons"
             android:layout_column="4"
             android:layout_row="0"
-            android:text="7min"></Button>
+            android:text="7min"/>
 
         <Button
             android:id="@+id/min8"
@@ -178,7 +183,7 @@
             style="@style/CustomTimeButtons"
             android:layout_column="1"
             android:layout_row="1"
-            android:text="10min"></Button>
+            android:text="10min"/>
 
 
         <Button
@@ -186,21 +191,21 @@
             style="@style/CustomTimeButtons"
             android:layout_column="2"
             android:layout_row="1"
-            android:text="12min"></Button>
+            android:text="12min"/>
 
         <Button
             android:id="@+id/min15"
             style="@style/CustomTimeButtons"
             android:layout_column="3"
             android:layout_row="1"
-            android:text="15min"></Button>
+            android:text="15min"/>
 
         <Button
             android:id="@+id/min20"
             style="@style/CustomTimeButtons"
             android:layout_column="4"
             android:layout_row="1"
-            android:text="20min"></Button>
+            android:text="20min"/>
 
     </GridLayout>
 

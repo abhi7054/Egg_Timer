@@ -2,6 +2,7 @@ package org.reallysimpleapps.eggtimer;
 
 import android.Manifest;
 import android.annotation.TargetApi;
+import android.app.DialogFragment;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -18,6 +19,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -126,6 +128,12 @@ public class Advanced extends AppCompatActivity implements android.location.Loca
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_advanced);
+
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true); // something to do with using NoActionBar in styles, but will always be true here I think
+
 
         altitudeMetersTV = (TextView) findViewById(R.id.altitudeMeters);
         altitudeFeetTV = (TextView) findViewById(R.id.altitudeFeet);
@@ -250,20 +258,12 @@ public class Advanced extends AppCompatActivity implements android.location.Loca
     private void updateRecommendedTime() {
 
         // convert double altInFeet to altInFeetasInt
-            Double d = new Double(altInFeet);
-            int altInFeetasInt = d.intValue();
-            eggAltitudeTime = altInFeetasInt / 10;
-
-
+        Double d = new Double(altInFeet);
+        int altInFeetasInt = d.intValue();
+        eggAltitudeTime = altInFeetasInt / 10;
 
 
         masterBoilTime = baseTimeSeconds + eggSizeTimeSeconds + eggTempTimeSeconds + eggAltitudeTime + eggHardMedSoftTimeSeconds;
-
-        // Round seconds to nearest minute
-        Log.i("AppInfo", "masterBoilTime in secs: " + masterBoilTime);
-        Log.i("AppInfo", "masterBoilTime in mins: " + masterBoilTime /60);
-
-        Log.i("AppInfo", "altInFeet as double: " + altInFeet);
 
 
         // convert seconds to mins and secs.
@@ -360,26 +360,13 @@ public class Advanced extends AppCompatActivity implements android.location.Loca
         }
 
 
-
         altInFeet = alt * 3.28;
-        Log.i("AppInfo", "altInFeet: " + altInFeet);
         String roundUpFeet = String.format("%.0f", altInFeet);
 
         String roundedUpMeters = String.format("%.0f", alt);
 
-        altitudeMetersTV.setText(roundedUpMeters + " m");
-        altitudeFeetTV.setText(roundUpFeet + " ft");
-
-
-
-        Log.i("Latitude", String.valueOf(lat));
-        Log.i("Longitude", String.valueOf(lng));
-        Log.i("altitude", String.valueOf(alt));
-        Log.i("bearing", String.valueOf(bearing));
-        Log.i("speed", String.valueOf(speed));
-        Log.i("accuracy", String.valueOf(accuracy));
-        Log.i("altitude", String.valueOf(roundUpFeet) + " feet rounded");
-
+        altitudeFeetTV.setText(roundUpFeet + "ft  / ");
+        altitudeMetersTV.setText(roundedUpMeters + "m");
 
 
     }
@@ -401,18 +388,31 @@ public class Advanced extends AppCompatActivity implements android.location.Loca
 
     public void controlTimer(View v) {
 
-        Log.i("AppInfo", "controlTimer btn clicked");
-        Log.i("AppInfo", "Rec time in mins as int: " + masterBoilTime);
-
-        int masterBoilTimeSecondsInt = masterBoilTime ;
-        Log.i("AppInfo", "Master Boil Time Seconds as int: " + String.valueOf(masterBoilTimeSecondsInt));
-
+        int masterBoilTimeSecondsInt = masterBoilTime;
         String masterBoilTimeSecondsString = String.valueOf(masterBoilTimeSecondsInt);
-        Log.i("AppInfo", "masterBoilTimeSecondsString: " + masterBoilTimeSecondsString);
-
         Intent intent = new Intent(this, MainActivity.class);
         intent.putExtra("Advanced_Time", masterBoilTimeSecondsString);
         startActivity(intent);
     }
 
+    public void explanationClicked(View view) {
+        Log.i("AppInfo", "? Clicked");
+
+        new AlertDialog.Builder(this)
+                .setTitle("Perfect Egg Timer algorithm")
+                .setMessage("We help you boil your pefect egg by taking all relevant factors into account. We even measure your actual location altitude, because how high you are can alter boil times by well over a minute!  Try it. We're truly eggcited to hear your feedback :-) ")
+                .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        // continue with delete
+                    }
+                })
+//                .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+//                    public void onClick(DialogInterface dialog, int which) {
+//                        // do nothing
+//                    }
+//                })
+                .setIcon(android.R.drawable.ic_dialog_alert)
+                .show();
+
+    }
 }

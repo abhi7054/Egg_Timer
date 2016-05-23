@@ -59,9 +59,7 @@
         android:id="@+id/controllerBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="140dp"
+        android:layout_below="@+id/recommendedTimeDisplay"
         android:layout_centerHorizontal="true"
         android:onClick="controlTimer"
         android:text="@string/accept_recommended_time"
@@ -69,13 +67,12 @@
         android:textSize="20sp"/>
 
     <TextView
-        android:id="@+id/makeDefaultTextView"
+        android:id="@+id/selectFromTheFollowing"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/algoExplainText"
-        android:layout_marginTop="24dp"
         android:layout_centerHorizontal="true"
-
+        android:layout_marginTop="24dp"
         android:text="@string/select_from_the_following"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@color/colorAccent"
@@ -83,25 +80,21 @@
 
 
     <GridLayout
+        android:id="@+id/gridLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="24dp"
-        android:layout_marginRight="24dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/makeDefaultTextView"
-        android:layout_marginTop="16dp"
-        android:rowCount="4"
-        android:columnCount="4"
-        android:id="@+id/gridLayout">
-
+        android:layout_below="@id/selectFromTheFollowing"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="8dp"
+        >
 
 
         <TextView
             android:id="@+id/eggSize"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_row="0"
             android:layout_column="0"
+            android:layout_row="0"
             android:text="@string/egg_size"
             android:textSize="20sp"/>
 
@@ -111,50 +104,45 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-        <RadioButton
-            android:id="@+id/smallEgg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_row="0"
-            android:layout_column="1"
-            android:layout_gravity="fill"
-            android:checked="false"
-            android:text="@string/small"/>
+            <RadioButton
+                android:id="@+id/smallEgg"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_gravity="fill"
+                android:layout_row="0"
+                android:checked="false"
+                android:text="@string/small"/>
 
-        <RadioButton
-            android:id="@+id/mediumEgg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_row="0"
-            android:layout_column="2"
-            android:layout_gravity="fill"
-            android:checked="true"
-            android:text="@string/medium"/>
+            <RadioButton
+                android:id="@+id/mediumEgg"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:layout_gravity="fill"
+                android:layout_row="0"
+                android:checked="true"
+                android:text="@string/medium"/>
 
-        <RadioButton
-            android:id="@+id/largeEgg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_row="0"
-            android:layout_column="3"
-            android:layout_gravity="fill"
-            android:checked="false"
-            android:text="@string/large"/>
+            <RadioButton
+                android:id="@+id/largeEgg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="3"
+                android:layout_gravity="fill"
+                android:layout_row="0"
+                android:checked="false"
+                android:text="@string/large"/>
 
         </RadioGroup>
-
-
-
 
 
         <TextView
             android:id="@+id/eggTemp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_row="1"
             android:layout_column="0"
-            android:layout_below="@+id/eggSize"
-
+            android:layout_row="1"
             android:text="@string/egg_temp"
             android:textSize="20sp"/>
 
@@ -164,38 +152,35 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-        <RadioButton
-            android:id="@+id/roomTemp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_row="1"
-            android:layout_column="1"
-            android:layout_gravity="fill"
-            android:checked="false"
-            android:text="@string/room"/>
+            <RadioButton
+                android:id="@+id/roomTemp"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_gravity="fill"
+                android:layout_row="1"
+                android:checked="false"
+                android:text="@string/room"/>
 
-        <RadioButton
-            android:id="@+id/fridgeTemp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_row="1"
-            android:layout_column="2"
-            android:layout_gravity="fill"
-            android:checked="true"
-            android:text="@string/fridge"/>
+            <RadioButton
+                android:id="@+id/fridgeTemp"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:layout_gravity="fill"
+                android:layout_row="1"
+                android:checked="true"
+                android:text="@string/fridge"/>
 
         </RadioGroup>
-
-
-
 
 
         <TextView
             android:id="@+id/selectHardOrSoft"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_row="2"
             android:layout_column="0"
+            android:layout_row="2"
             android:text="@string/i_d_like"
             android:textSize="20sp"/>
 
@@ -205,78 +190,82 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-        <RadioButton
-            android:id="@+id/hardBoiledEgg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_row="2"
-            android:layout_column="1"
-            android:layout_gravity="fill"
-            android:checked="false"
-            android:text="@string/hard"/>
+            <RadioButton
+                android:id="@+id/hardBoiledEgg"
+                android:layout_width="75dp"
+                android:layout_height="wrap_content"
+                android:layout_column="1"
+                android:layout_gravity="fill"
+                android:layout_row="2"
+                android:checked="false"
+                android:text="@string/hard"/>
 
-        <RadioButton
-            android:id="@+id/mediumBoiledEgg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_row="2"
-            android:layout_column="2"
-            android:layout_gravity="fill"
-            android:checked="true"
-            android:text="Medium"/>
+            <RadioButton
+                android:id="@+id/mediumBoiledEgg"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"
+                android:layout_column="2"
+                android:layout_gravity="fill"
+                android:layout_row="2"
+                android:checked="true"
+                android:text="Medium"/>
 
-        <RadioButton
-            android:id="@+id/softBoiledEgg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_row="2"
-            android:layout_column="3"
-            android:layout_gravity="fill"
-            android:checked="false"
-            android:text="@string/soft"/>
+            <RadioButton
+                android:id="@+id/softBoiledEgg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="3"
+                android:layout_gravity="fill"
+                android:layout_row="2"
+                android:checked="false"
+                android:text="@string/soft"/>
 
         </RadioGroup>
-
-
 
     </GridLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginLeft="28dp"
-        android:layout_marginRight="24dp"
-        android:layout_below="@id/gridLayout">
+        android:layout_below="@+id/gridLayout"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/linearLayout">
 
-    <TextView
-        android:id="@+id/location"
-        android:layout_width="0dp"
-        android:layout_weight="2"
-        android:layout_height="wrap_content"
-        android:text="Location"
-        android:textSize="16sp"/>
+        <TextView
+            android:id="@+id/altitudeTitle"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="3"
+            android:text="@string/altitude"
+            android:textSize="20sp"/>
 
-    <TextView
-        android:id="@+id/altitudeFeet"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:textSize="16sp"
-        android:layout_height="wrap_content"
-        android:text="feet"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/location"
+            android:text="Your location"
+            android:maxWidth="175dp"
+            android:singleLine="true"
+            />
 
-    <TextView
-        android:id="@+id/altitudeMeters"
-        android:layout_width="0dp"
-        android:layout_weight="1"
-        android:textSize="16sp"
-        android:layout_height="wrap_content"
-        android:text="meters"/>
+        <TextView
+            android:id="@+id/altitudeFeet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="16dp"
+            android:text="feet"
+            android:textSize="16sp"/>
+
+
+        <TextView
+            android:id="@+id/altitudeMeters"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="meters"
+            android:textSize="16sp"/>
 
     </LinearLayout>
-
-
-
 
 
     <TextView
@@ -284,8 +273,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/gridLayout"
-        android:layout_marginTop="40dp"
         android:layout_centerInParent="true"
+        android:layout_marginTop="40dp"
         android:text="@string/recommended_time"
         android:textSize="18sp"
         android:textStyle="bold"/>
@@ -299,6 +288,24 @@
         android:text="@string/time"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textSize="32sp"/>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:layout_alignBottom="@+id/recommendedTime"
+        android:layout_toRightOf="@+id/recommendedTime"
+        android:adjustViewBounds="false"
+        android:src="@drawable/questionmark"
+        android:layout_alignTop="@+id/recommendedTime"
+        android:layout_alignRight="@+id/linearLayout"
+        android:layout_alignEnd="@+id/linearLayout"
+        android:layout_marginRight="48dp"
+        android:layout_marginEnd="48dp"
+        android:onClick="explanationClicked"
+        android:maxWidth="10dp"
+        android:minHeight="10dp"
+        android:longClickable="false"/>
 
 
 </RelativeLayout>

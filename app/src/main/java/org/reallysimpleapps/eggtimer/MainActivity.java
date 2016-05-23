@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView timerTextView;
     TextView setDefaultTime;
     Button controllerBtn;
-    Button advancedBtn;
+    TextView advancedBtn;
     ImageView inviteFriends;
     Boolean counterIsActive = false;
     Boolean controlBtnIsAgain = false;
@@ -261,8 +261,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mAdView.loadAd(adRequest);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setDefaultTime = (TextView) findViewById(R.id.makeDefaultTextView);
-        advancedBtn = (Button) findViewById(R.id.advancedBtn);
+        setDefaultTime = (TextView) findViewById(R.id.selectFromTheFollowing);
+        advancedBtn = (TextView) findViewById(R.id.advancedBtn);
 
         setSupportActionBar(toolbar);
         toolbar.setLogo(R.mipmap.ic_launcher);

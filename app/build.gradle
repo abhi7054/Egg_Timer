@@ -11,8 +11,8 @@ android {
         applicationId "org.reallysimpleapps.eggtimer"
         minSdkVersion 16
         targetSdkVersion 23
-        versionCode 16
-        versionName "1.85.5"
+        versionCode 17
+        versionName "2.00.0"
     }
     buildTypes {
         release {

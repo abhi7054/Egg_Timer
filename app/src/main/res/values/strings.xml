@@ -15,9 +15,12 @@
     <string name="you_ve_just_cooked_your_perfect_egg_take_a_snap_and_share_it_with_your_friends_using_perfectegg">You\'ve just cooked your perfect egg. Take a snap and share it with your friends using #PerfectEgg</string>
     <string name="snap_your_egg_and_share">Snap your egg and share!</string>
     <string name="the_perfect_egg_timer">The Perfect Egg Timer</string>
-    <string name="okay_we_admit_it_we_re_totally_obssessed_with_eggs_we_simply_love_em">Okay, we admit it... we\'re totally obssessed with eggs. We simply love \'em!</string>
-    <string name="but_hey_what_could_be_better_than_a_perfectly_cooked_egg_hard_or_soft_boiled_you_decide_but_how_should_you_cook_your_perfect_egg_we_ve_got_some_advice_for_you">But hey, what could be better than a perfectly cooked egg. Hard or soft boiled, you decide. But how should you cook your perfect egg? We\'ve got some advice for you...</string>
-    <string name="bring_the_water_up_to_a_boil_then_lower_it_to_a_rapid_simmer_add_the_eggs_to_the_pot_and_then_click_go_to_start_timing_if_you_re_just_cooking_one_or_two_eggs_five_minutes_is_perfect_for_a_runny_yolk_or_cook_as_long_as_seven_minutes_for_a_more_firmly_set_but_still_spoonable_yolk">Bring the water up to a boil, then lower it to a rapid simmer. Add the eggs to the pot, and then click GO! to start timing. If you\'re just cooking one or two eggs, five minutes is perfect for a runny yolk, or cook as long as seven minutes for a more firmly set, but still spoonable, yolk.</string>
+    <string name="About_Egg_Heading">We love eggs!</string>
+    <string name="About_Egg_Heading2">Here\'s how to use the Perfect Egg Timer to boil your perfect egg in basic and advanced mode...</string>
+    <string name="About_egg_cook_general_instructions">Bring the water up to a boil, then lower (but not too much) to a rapid simmer. Add the eggs to the pot, and then click GO! to start timing.</string>
+    <string name="About_egg_cook_basic_instructions">If you\'re just cooking one or two eggs, five minutes is perfect for a runny yolk, or cook as long as seven minutes for a more firmly set, but still spoonable, yolk.</string>
+    <string name="About_egg_cook_advanced_instructions">It turns out the perfect boiled egg timer depends on many factors like whether your egg has been in the fridge, it\'s size and even the altitude of your cooking location. Now we don\'t expect you to actually know your altitude, but the Perfect Egg Timer will if you allow it access. Boiling time can vary significantly due to your altitude, so use our advanced \'Let us calculate egg time\' and we\'ll put our advanced algorithm to work!</string>
+    <string name="spread_the_word">We\'ve worked hard to bring you the Perfect Egg Timer. Our happy app downloaders are extremely loyal and we\'d like you to join their enthusiasm by telling your friends and family about this wonderful app. It\'s only available on Android right now, so if you know others with an Android phone and a love of boiled eggs and a bit of fun, please take a moment to share the Perfect Egg Timer now.</string>
     <string name="please_share_us">Please share us</string>
     <string name="back_to_timer">Back to timer</string>
     <string name="share">share</string>
@@ -52,7 +55,7 @@
 
     <string name="About_Perfect_Egg_Timer">About Perfect Egg Timer</string>
     <string name="deep_link_default" translatable="false">https://play.google.com/store/apps/details?id=org.reallysimpleapps.eggtimer</string>
-    <string name="use_our_algorithm_to_calculate_the_perfect_boiling_time_for_your_egg">Use our algorithm to calculate the perfect egg boil time</string>
+    <string name="use_our_algorithm_to_calculate_the_perfect_boiling_time_for_your_egg">Use our algorithm to calculate your perfect egg boil time</string>
     <string name="select_from_the_following">Select from the following</string>
     <string name="egg_size">Egg size</string>
     <string name="small">Small</string>
@@ -68,6 +71,7 @@
     <string name="recommended_time">Recommended:</string>
     <string name="time">Time</string>
     <string name="accept_recommended_time">Accept &amp; GO!</string>
-    <string name="let_us_calculate_for_you">Let us calculate egg time</string>
+    <string name="let_us_calculate_for_you"><u>Let us calculate egg time</u></string>
+    <string name="location">Location</string>
 
 </resources>

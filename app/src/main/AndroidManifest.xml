@@ -40,7 +40,9 @@
             android:label="Time&apos;s Up"
             android:parentActivityName=".MainActivity">
         </activity>
-        <activity android:name=".Advanced">
+        <activity
+            android:name=".Advanced"
+            android:parentActivityName=".MainActivity">
         </activity>
     </application>
 
