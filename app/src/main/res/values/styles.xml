@@ -13,5 +13,14 @@
 
     </style>
 
+    <style name="CustomTimeButtons">
+        <item name="android:layout_width">70dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:onClick">onClick</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">7pt</item>
+        <item name="android:textColor">#3E2F5B</item>/>
+    </style>
+
 
 </resources>

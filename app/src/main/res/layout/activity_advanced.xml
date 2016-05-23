@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:ads="http://schemas.android.com/apk/res-auto"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                tools:context="org.reallysimpleapps.eggtimer.MainActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:contentInsetEnd="0dp"
+        app:contentInsetStart="0dp"/>
+
+
+    <ImageView
+        android:id="@+id/imageViewEgg"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="56dp"
+        android:alpha="1"
+        android:scaleType="centerCrop"
+        android:src="@drawable/egg3"/>
+
+    <TextView
+        android:id="@+id/algoExplainText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignWithParentIfMissing="false"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginTop="72dp"
+        android:gravity="center_horizontal"
+        android:text="@string/use_our_algorithm_to_calculate_the_perfect_boiling_time_for_your_egg"
+        android:textColor="#FFF3E0"
+        android:textSize="22sp"/>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        ads:adSize="SMART_BANNER"
+        ads:adUnitId="@string/banner_ad_unit_id">
+
+    </com.google.android.gms.ads.AdView>
+
+
+    <Button
+        android:id="@+id/controllerBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="140dp"
+        android:layout_centerHorizontal="true"
+        android:onClick="controlTimer"
+        android:text="@string/accept_recommended_time"
+        android:textAllCaps="false"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/makeDefaultTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/algoExplainText"
+        android:layout_marginTop="24dp"
+        android:layout_centerHorizontal="true"
+
+        android:text="@string/select_from_the_following"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/colorAccent"
+        android:textSize="14sp"/>
+
+
+    <GridLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginRight="24dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/makeDefaultTextView"
+        android:layout_marginTop="16dp"
+        android:rowCount="4"
+        android:columnCount="4"
+        android:id="@+id/gridLayout">
+
+
+
+        <TextView
+            android:id="@+id/eggSize"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:text="@string/egg_size"
+            android:textSize="20sp"/>
+
+        <RadioGroup
+            android:id="@+id/radioEggSizeGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/smallEgg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_gravity="fill"
+            android:checked="false"
+            android:text="@string/small"/>
+
+        <RadioButton
+            android:id="@+id/mediumEgg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="2"
+            android:layout_gravity="fill"
+            android:checked="true"
+            android:text="@string/medium"/>
+
+        <RadioButton
+            android:id="@+id/largeEgg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="0"
+            android:layout_column="3"
+            android:layout_gravity="fill"
+            android:checked="false"
+            android:text="@string/large"/>
+
+        </RadioGroup>
+
+
+
+
+
+        <TextView
+            android:id="@+id/eggTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_below="@+id/eggSize"
+
+            android:text="@string/egg_temp"
+            android:textSize="20sp"/>
+
+        <RadioGroup
+            android:id="@+id/radioEggTempGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/roomTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:layout_gravity="fill"
+            android:checked="false"
+            android:text="@string/room"/>
+
+        <RadioButton
+            android:id="@+id/fridgeTemp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="1"
+            android:layout_column="2"
+            android:layout_gravity="fill"
+            android:checked="true"
+            android:text="@string/fridge"/>
+
+        </RadioGroup>
+
+
+
+
+
+        <TextView
+            android:id="@+id/selectHardOrSoft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="2"
+            android:layout_column="0"
+            android:text="@string/i_d_like"
+            android:textSize="20sp"/>
+
+        <RadioGroup
+            android:id="@+id/radioHardOrSoftGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/hardBoiledEgg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="2"
+            android:layout_column="1"
+            android:layout_gravity="fill"
+            android:checked="false"
+            android:text="@string/hard"/>
+
+        <RadioButton
+            android:id="@+id/mediumBoiledEgg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="2"
+            android:layout_column="2"
+            android:layout_gravity="fill"
+            android:checked="true"
+            android:text="Medium"/>
+
+        <RadioButton
+            android:id="@+id/softBoiledEgg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_row="2"
+            android:layout_column="3"
+            android:layout_gravity="fill"
+            android:checked="false"
+            android:text="@string/soft"/>
+
+        </RadioGroup>
+
+
+
+    </GridLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="28dp"
+        android:layout_marginRight="24dp"
+        android:layout_below="@id/gridLayout">
+
+    <TextView
+        android:id="@+id/location"
+        android:layout_width="0dp"
+        android:layout_weight="2"
+        android:layout_height="wrap_content"
+        android:text="Location"
+        android:textSize="16sp"/>
+
+    <TextView
+        android:id="@+id/altitudeFeet"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:textSize="16sp"
+        android:layout_height="wrap_content"
+        android:text="feet"/>
+
+    <TextView
+        android:id="@+id/altitudeMeters"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:textSize="16sp"
+        android:layout_height="wrap_content"
+        android:text="meters"/>
+
+    </LinearLayout>
+
+
+
+
+
+    <TextView
+        android:id="@+id/recommendedTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/gridLayout"
+        android:layout_marginTop="40dp"
+        android:layout_centerInParent="true"
+        android:text="@string/recommended_time"
+        android:textSize="18sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/recommendedTimeDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/recommendedTime"
+        android:layout_centerInParent="true"
+        android:text="@string/time"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textSize="32sp"/>
+
+
+</RelativeLayout>

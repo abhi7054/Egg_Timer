@@ -3,7 +3,6 @@ package org.reallysimpleapps.eggtimer;
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
-import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -34,7 +33,6 @@ import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
-// TODO Add settings menu and add about app and about making the perfect app, plus share and rate
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
@@ -42,6 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     TextView timerTextView;
     TextView setDefaultTime;
     Button controllerBtn;
+    Button advancedBtn;
     ImageView inviteFriends;
     Boolean counterIsActive = false;
     Boolean controlBtnIsAgain = false;
@@ -55,6 +54,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button mins5;
     Button mins6;
     Button mins7;
+    Button mins8;
+    Button mins10;
+    Button mins12;
+    Button mins15;
+    Button mins20;
     int timesUsed;
 
 
@@ -79,10 +83,29 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         timerSeekBar.setProgress(secondsLeft);
         countDownTimer.cancel();
         controllerBtn.setText(R.string.Go);
+        setTimerButtonsVisible();
+
+
         NotificationManager notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         notificationManager.cancel(1);
         timerSeekBar.setEnabled(true);
         counterIsActive = false;
+    }
+
+    private void setTimerButtonsVisible() {
+
+        mins3.setVisibility(View.VISIBLE);
+        mins4.setVisibility(View.VISIBLE);
+        mins5.setVisibility(View.VISIBLE);
+        mins6.setVisibility(View.VISIBLE);
+        mins7.setVisibility(View.VISIBLE);
+        mins8.setVisibility(View.VISIBLE);
+        mins10.setVisibility(View.VISIBLE);
+        mins12.setVisibility(View.VISIBLE);
+        mins15.setVisibility(View.VISIBLE);
+        mins20.setVisibility(View.VISIBLE);
+
+        advancedBtn.setVisibility(View.VISIBLE);
     }
 
     public void awaitRunAgain() {
@@ -94,6 +117,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         timerSeekBar.setEnabled(true);
         counterIsActive = false;
 
+
         // Find out how many times app has run by checking SharedPreferences file
         SharedPreferences sharedPreferences = getSharedPreferences("MyData", Context.MODE_PRIVATE);
         timesUsed = sharedPreferences.getInt("numberOfUses", 0);
@@ -104,11 +128,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         editor.putInt("numberOfUses", timesUsed);
         editor.commit();
 
-        if(timesUsed % 5 == 0){
-        // Display invite friends App Invite button
-        inviteFriends.setVisibility(View.VISIBLE);
-        }
-        else {
+        if (timesUsed % 5 == 0) {
+            // Display invite friends App Invite button
+            inviteFriends.setVisibility(View.VISIBLE);
+        } else {
             // Potentially request a Google Play rating, though will depend on AppRater settings
             new AppRater(this).show();
         }
@@ -136,12 +159,30 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             controlBtnIsAgain = false;
             egg.setImageResource(R.drawable.egg1);
             inviteFriends.setVisibility(View.INVISIBLE);
+            setTimerButtonsVisible();
+
+
             resetTimer();
 
         } else if (counterIsActive == false) {
             counterIsActive = true;
             timerSeekBar.setEnabled(false); // prevents user seeking whilst counter active
             controllerBtn.setText(R.string.Stop);
+
+            // prevent set timer buttons being clicked whilst countdown running
+
+            mins3.setVisibility(View.INVISIBLE);
+            mins4.setVisibility(View.INVISIBLE);
+            mins5.setVisibility(View.INVISIBLE);
+            mins6.setVisibility(View.INVISIBLE);
+            mins7.setVisibility(View.INVISIBLE);
+            mins8.setVisibility(View.INVISIBLE);
+            mins10.setVisibility(View.INVISIBLE);
+            mins12.setVisibility(View.INVISIBLE);
+            mins15.setVisibility(View.INVISIBLE);
+            mins20.setVisibility(View.INVISIBLE);
+
+
             MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.startclick); // start sound
             mediaPlayer.start();
 
@@ -169,8 +210,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                     long[] pattern = {0, 400, 600, 400, 600, 400}; // vibrate pattern setup
                     vibrator.vibrate(pattern, -1); // vibrate pattern
-                    // TODO Add Share with others after say 5 uses
-                    // TODO add rate on market after another 5 uses
 
                     awaitRunAgain();
                 }
@@ -205,12 +244,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
         mins3 = (Button) findViewById(R.id.min3);
         mins4 = (Button) findViewById(R.id.min4);
         mins5 = (Button) findViewById(R.id.min5);
         mins6 = (Button) findViewById(R.id.min6);
         mins7 = (Button) findViewById(R.id.min7);
-
+        mins8 = (Button) findViewById(R.id.min8);
+        mins10 = (Button) findViewById(R.id.min10);
+        mins12 = (Button) findViewById(R.id.min12);
+        mins15 = (Button) findViewById(R.id.min15);
+        mins20 = (Button) findViewById(R.id.min20);
 
         AdView mAdView = (AdView) findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
@@ -218,6 +262,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setDefaultTime = (TextView) findViewById(R.id.makeDefaultTextView);
+        advancedBtn = (Button) findViewById(R.id.advancedBtn);
+
         setSupportActionBar(toolbar);
         toolbar.setLogo(R.mipmap.ic_launcher);
 
@@ -261,7 +307,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             // retrieve saved default time if available
             SharedPreferences sharedPreferences = getSharedPreferences("MyData", Context.MODE_PRIVATE);
             int timeCheck = sharedPreferences.getInt("timeInSeconds", -1); // if no previous file set to -1 and use 4mins
-            timerSeekBar.setMax(600);
+            timerSeekBar.setMax(1200);
 
             if (timeCheck == -1) { // no default time has been saved yet
                 timerSeekBar.setProgress(240);
@@ -302,6 +348,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             }
         });
+
+
+        // grab any time sent from Advanced.class
+        Intent intent = getIntent();
+        Bundle bundle = intent.getExtras();
+
+        if (bundle != null) {
+            String recommendedBoilTimeSecondsString = (String) bundle.get("Advanced_Time");
+            Log.i("AppInfo", "recommendedBoilTimeSecondsString in MainActivity: " + recommendedBoilTimeSecondsString);
+
+            int recommendedBoilTimeSecondsInt = 0;
+
+            try {
+                recommendedBoilTimeSecondsInt = Integer.parseInt(recommendedBoilTimeSecondsString);
+                Log.i("AppInfo", "recommendedBoilTimeSecondsInt: " + recommendedBoilTimeSecondsInt);
+                setTime(recommendedBoilTimeSecondsInt);
+
+                runWhenAdvancedAccepted();
+
+            } catch (NumberFormatException nfe) {
+                // Handle parse error.
+            }
+        }
+
+
     }
 
 
@@ -411,30 +482,54 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()){
-            case R.id.min3:
-                setTime(180);
-                break;
 
-            case R.id.min4:
-                setTime(240);
-                break;
+        if (!counterIsActive) {
 
-            case R.id.min5:
-                setTime(300);
-                break;
+            switch (v.getId()) {
+                case R.id.min3:
+                    setTime(180);
+                    break;
 
-            case R.id.min6:
-                setTime(360);
-                break;
+                case R.id.min4:
+                    setTime(240);
+                    break;
 
-            case R.id.min7:
-                setTime(420);
-                break;
+                case R.id.min5:
+                    setTime(300);
+                    break;
+
+                case R.id.min6:
+                    setTime(360);
+                    break;
+
+                case R.id.min7:
+                    setTime(420);
+                    break;
+
+                case R.id.min8:
+                    setTime(480);
+                    break;
+
+                case R.id.min10:
+                    setTime(600);
+                    break;
+
+                case R.id.min12:
+                    setTime(720);
+                    break;
+
+                case R.id.min15:
+                    setTime(900);
+                    break;
+
+                case R.id.min20:
+                    setTime(1200);
+                    break;
+            }
         }
     }
 
-    public void setTime(int secondsToSet){
+    public void setTime(int secondsToSet) {
 
         int timeCheck = secondsToSet;
         timerSeekBar.setProgress(timeCheck);
@@ -450,5 +545,71 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         long[] pattern = {0, 50}; // short vibrate pattern for setting default time
         vibrator.vibrate(pattern, -1); // start vibrate
     }
+
+
+    public void goAdvanced(View view) {
+        Intent intent = new Intent(this, Advanced.class);
+        startActivity(intent);
+    }
+
+
+    public void runWhenAdvancedAccepted() {
+
+            counterIsActive = true;
+            timerSeekBar.setEnabled(false); // prevents user seeking whilst counter active
+            controllerBtn.setText(R.string.Stop);
+
+            // prevent set timer buttons being clicked whilst countdown running
+            mins3.setVisibility(View.INVISIBLE);
+            mins4.setVisibility(View.INVISIBLE);
+            mins5.setVisibility(View.INVISIBLE);
+            mins6.setVisibility(View.INVISIBLE);
+            mins7.setVisibility(View.INVISIBLE);
+            mins8.setVisibility(View.INVISIBLE);
+            mins10.setVisibility(View.INVISIBLE);
+            mins12.setVisibility(View.INVISIBLE);
+            mins15.setVisibility(View.INVISIBLE);
+            mins20.setVisibility(View.INVISIBLE);
+
+            // Also prevent Advanced button being clicked whilst coundown running
+            advancedBtn.setVisibility(View.INVISIBLE);
+
+
+
+            MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.startclick); // start sound
+            mediaPlayer.start();
+
+            long[] pattern = {0, 150}; // short vibrate pattern setup for starting timer
+            vibrator.vibrate(pattern, -1); // start vibrate
+            setDefaultTime.setText("");
+
+            egg.setImageResource(R.drawable.egg1); // revert to original uncooked egg image
+
+            countDownTimer = new CountDownTimer(timerSeekBar.getProgress() * 1000 + 100, 1000) {
+
+                @Override
+                public void onTick(long millisUntilFinished) {
+                    updateTimer((int) millisUntilFinished / 1000);
+                }
+
+                @Override
+                public void onFinish() {
+                    timerTextView.setText("0:00");
+                    egg.setImageResource(R.drawable.egg2);
+                    MediaPlayer mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.rooster);
+                    mediaPlayer.start();
+
+                    createNotification();
+
+                    long[] pattern = {0, 400, 600, 400, 600, 400}; // vibrate pattern setup
+                    vibrator.vibrate(pattern, -1); // vibrate pattern
+
+                    awaitRunAgain();
+                }
+            }.start();
+
+    }
+
+
 
 }
