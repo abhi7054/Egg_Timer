@@ -8,15 +8,13 @@
     <string name="Your_egg_is_boiled_and_ready_to_enjoy">Su huevo se hierve y listo para disfrutar</string>
     <string name="go">¡vamos!</string>
     <string name="slide_to_set_egg_boil_time"> Deslizar para ajustar el tiempo de ebullición de huevo</string>
-    <string name="about">About</string>
+    <string name="about">Acerca de</string>
     <string name="you_ve_just_cooked_your_perfect_egg_take_a_snap_and_share_it_with_your_friends_using_perfectegg">Usted sólo ha cocinado el huevo perfecto. Tomar una instantánea y compartirlo con tus amigos usando #PerfectEgg</string>
     <string name="photo">foto</string>
     <string name="snap_your_egg_and_share">Ajustar el huevo y compartir !</string>
     <string name="time_s_up"> ¡Se acabó el tiempo</string>
     <string name="back_to_timer"> Volver al temporizador</string>
-    <string name="bring_the_water_up_to_a_boil_then_lower_it_to_a_rapid_simmer_add_the_eggs_to_the_pot_and_then_click_go_to_start_timing_if_you_re_just_cooking_one_or_two_eggs_five_minutes_is_perfect_for_a_runny_yolk_or_cook_as_long_as_seven_minutes_for_a_more_firmly_set_but_still_spoonable_yolk">Llevar el agua hasta que hierva , luego baje a fuego lento rápido . Añadir los huevos a la olla y , a continuación, haga clic en GO ! para iniciar el cronometraje . Si acaba de cocinar uno o dos huevos , cinco minutos es perfecto para una fatiga yema , o cocinar hasta siete minutos para una más firmemente establecido , pero todavía puede comer con cuchara , yema de huevo.</string>
-    <string name="but_hey_what_could_be_better_than_a_perfectly_cooked_egg_hard_or_soft_boiled_you_decide_but_how_should_you_cook_your_perfect_egg_we_ve_got_some_advice_for_you"> Pero bueno , ¿qué podría ser mejor que un huevo perfectamente cocinado . Duro o pasado por agua , a decidir. Pero ¿cómo se debe cocinar su huevo perfecto? Tenemos algunos consejos para usted ...</string>
-    <string name="okay_we_admit_it_we_re_totally_obssessed_with_eggs_we_simply_love_em">De acuerdo, lo admitimos ... estamos totalmente Obssessed con huevos . Simplemente me encanta \' em</string>
+
     <string name="please_share_us">Por favor, comparta con nosotros</string>
     <string name="the_perfect_egg_timer">El contador de tiempo del huevo perfecto</string>
     <string name="share">compartir</string>
@@ -28,4 +26,27 @@
     <string name="invite_dialog_title">Tienes una invitación</string>
     <string name="invite_friends">Invitar a amigos</string>
     <string name="send_failed">el envío de invitaciones fracasaron</string>
+    <string name="About_Egg_Heading">Nos encanta los huevos</string>
+    <string name="About_Egg_Heading2">Aquí es cómo utilizar el temporizador de huevo perfecto para hervir el huevo perfecto en el modo básico y avanzado</string>
+    <string name="About_egg_cook_advanced_instructions"> Resulta que el temporizador de huevo cocido perfecta depende de muchos factores como por ejemplo si el huevo ha sido en la nevera , su tamaño e incluso la altitud de su posición de cocinado . Ahora no esperamos que sepan realmente su altura, pero el Egg Timer perfecta voluntad si usted lo permite el acceso . Tiempo de ebullición puede variar significativamente debido a su altitud , a fin de utilizar nuestra avanzada \' Vamos a calcular el tiempo de huevo \' y vamos a poner nuestro algoritmo avanzado para trabajar</string>
+    <string name="About_egg_cook_basic_instructions">Si acaba de cocinar uno o dos huevos, cinco minutos es perfecto para una fatiga yema, o cocinar hasta siete minutos para una más firmemente establecido, pero todavía puede comer con cuchara, yema de huevo.</string>
+    <string name="About_egg_cook_general_instructions">Llevar el agua hasta que hierva, luego más abajo (pero no demasiado) a fuego lento rápido. Añadir los huevos a la olla y, a continuación, haga clic en GO! para iniciar el cronometraje.</string>
+    <string name="accept_recommended_time">Aceptar</string>
+    <string name="altitude">Altitud</string>
+    <string name="egg_size">Huevo tamaño</string>
+    <string name="egg_temp">Temperatura</string>
+    <string name="fridge">Refrigerador</string>
+    <string name="hard">Firme</string>
+    <string name="i_d_like">me gustaría</string>
+    <string name="large">Grande</string>
+    <string name="let_us_calculate_for_you">Vamos a calcular el tiempo de huevo</string>
+    <string name="location">Ubicación</string>
+    <string name="medium">Medio</string>
+    <string name="recommended_time">Recomendado:</string>
+    <string name="room">Habitación</string>
+    <string name="select_from_the_following">Seleccione de la siguiente</string>
+    <string name="small">Pequeña</string>
+    <string name="soft">Suave</string>
+    <string name="spread_the_word">Hemos trabajado duro para lograr que los Egg Timer perfecto. Nuestros descargadores de aplicaciones felices son extremadamente leales y nos gustaría que se unan a su entusiasmo diciendo a sus amigos y familiares acerca de esta maravillosa aplicación. Es sólo está disponible en Android en este momento, así que si conoces otros con un teléfono Android y un amor de huevos pasados por agua y un poco de diversión, por favor tome un momento para compartir el temporizador de huevo perfecto ahora.</string>
+    <string name="time">Hora</string>
 </resources>

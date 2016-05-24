@@ -8,15 +8,13 @@
     <string name="Your_egg_is_boiled_and_ready_to_enjoy">Votre oeuf est cuit et prêt à profiter</string>
     <string name="go">Aller!</string>
     <string name="slide_to_set_egg_boil_time">Faites glisser pour définir le temps de faire bouillir des oeufs</string>
-    <string name="about">About</string>
+    <string name="about">Sur</string>
     <string name="you_ve_just_cooked_your_perfect_egg_take_a_snap_and_share_it_with_your_friends_using_perfectegg">Vous venez de cuire votre oeuf parfait. Prenez une photo et la partager avec vos amis en utilisant #PerfectEgg</string>
     <string name="time_s_up">Le temps est écoulé!</string>
     <string name="snap_your_egg_and_share"> Enclenchez votre oeuf et partager !</string>
     <string name="photo">photo</string>
     <string name="back_to_timer">Retour à la minuterie</string>
-    <string name="bring_the_water_up_to_a_boil_then_lower_it_to_a_rapid_simmer_add_the_eggs_to_the_pot_and_then_click_go_to_start_timing_if_you_re_just_cooking_one_or_two_eggs_five_minutes_is_perfect_for_a_runny_yolk_or_cook_as_long_as_seven_minutes_for_a_more_firmly_set_but_still_spoonable_yolk">Porter l\'eau à ébullition, puis baisser à ébullition rapide. Ajouter les oeufs dans la casserole , puis cliquez sur GO! pour démarrer la synchronisation. Si vous êtes juste cuire un ou deux œufs , cinq minutes est parfait pour un jaune qui coule, ou cuire aussi longtemps que sept minutes pour une plus fermement fixée, mais encore spoonable , le jaune .</string>
-    <string name="but_hey_what_could_be_better_than_a_perfectly_cooked_egg_hard_or_soft_boiled_you_decide_but_how_should_you_cook_your_perfect_egg_we_ve_got_some_advice_for_you"> Mais bon, ce qui pourrait être mieux qu\'un œuf parfaitement cuit . Dur ou mou bouilli, vous décidez . Mais comment devriez-vous faire cuire votre oeuf parfait? Nous avons quelques conseils pour vous ...</string>
-    <string name="okay_we_admit_it_we_re_totally_obssessed_with_eggs_we_simply_love_em">D\'accord, nous l\'admettons ... nous sommes totalement obsédé avec des œufs . Nous aimons tout simplement \'em !</string>
+
     <string name="please_share_us">S\'il vous plaît nous partager</string>
     <string name="the_perfect_egg_timer"> Le Egg Timer Parfait</string>
     <string name="share">partager</string>
@@ -28,4 +26,27 @@
     <string name="invite_dialog_title"> Vous avez obtenu une invitation </string>
     <string name="invite_friends"> Inviter des amis</string>
     <string name="send_failed">Échec de l\'envoi des invitations</string>
+    <string name="About_Egg_Heading">Nous aimons les œufs</string>
+    <string name="About_Egg_Heading2">Voici comment utiliser la minuterie Egg Parfait pour faire bouillir votre oeuf parfait en mode de base et avancé ...</string>
+    <string name="About_egg_cook_advanced_instructions">Il se trouve la minuterie d\' œuf à la coque parfait dépend de nombreux facteurs , comme si votre œuf a été dans le réfrigérateur , sa taille et même l\'altitude de l\'emplacement de votre cuisine. Maintenant, nous ne nous attendons pas que vous sachiez réellement votre altitude , mais le Egg Timer Perfect si vous lui permettre l\'accès . Temps de cuisson peut varier de manière significative en raison de l\'altitude , donc utiliser notre avancée » Calculons le temps d\'oeuf \' et nous allons mettre notre algorithme avancé pour travailler</string>
+    <string name="About_egg_cook_basic_instructions"> Si vous êtes juste cuire un ou deux œufs , cinq minutes est parfait pour un jaune qui coule, ou cuire aussi longtemps que sept minutes pour une plus fermement fixée, mais encore spoonable , le jaune .</string>
+    <string name="About_egg_cook_general_instructions">Porter l\'eau à ébullition, puis baisser (mais pas trop) à ébullition rapide. Ajouter les oeufs dans la casserole, puis cliquez sur GO! pour démarrer la synchronisation.</string>
+    <string name="accept_recommended_time">Acceptez</string>
+    <string name="altitude">Altitude</string>
+    <string name="egg_size">Egg size</string>
+    <string name="egg_temp">Température</string>
+    <string name="fridge">Frigo</string>
+    <string name="hard">Ferme</string>
+    <string name="i_d_like">J\'aimerais</string>
+    <string name="large">Grand</string>
+    <string name="let_us_calculate_for_you">Calculons le temps d\'oeuf</string>
+    <string name="location">Emplacement</string>
+    <string name="medium">Moyen</string>
+    <string name="recommended_time">Conseillé:</string>
+    <string name="room">Chambre</string>
+    <string name="select_from_the_following">Sélectionnez parmi les options suivantes</string>
+    <string name="small">Petit</string>
+    <string name="soft">Doux</string>
+    <string name="spread_the_word">Nous avons travaillé dur pour vous apporter le Egg Timer parfait. Notre application téléchargeurs heureux sont extrêmement fidèles et nous aimerions vous joindre à leur enthousiasme en parlant à vos amis et votre famille sur cette merveilleuse application. Il est disponible uniquement sur Android en ce moment, donc si vous connaissez d\'autres avec un téléphone Android et un amour des œufs durs et un peu de plaisir, s\'il vous plaît prendre un moment pour partager le Egg Timer parfait maintenant.</string>
+    <string name="time">Temps</string>
 </resources>

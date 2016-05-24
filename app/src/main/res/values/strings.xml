@@ -55,7 +55,7 @@
 
     <string name="About_Perfect_Egg_Timer">About Perfect Egg Timer</string>
     <string name="deep_link_default" translatable="false">https://play.google.com/store/apps/details?id=org.reallysimpleapps.eggtimer</string>
-    <string name="use_our_algorithm_to_calculate_the_perfect_boiling_time_for_your_egg">Use our algorithm to calculate your perfect egg boil time</string>
+    <string name="use_our_algorithm_to_calculate_the_perfect_boiling_time_for_your_egg" translatable="false">Use our algorithm to calculate your perfect egg boil time</string>
     <string name="select_from_the_following">Select from the following</string>
     <string name="egg_size">Egg size</string>
     <string name="small">Small</string>

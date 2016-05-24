@@ -69,8 +69,7 @@ public class Advanced extends AppCompatActivity implements android.location.Loca
     Location mLastLocation;
     private GoogleApiClient mGoogleApiClient;
     private LocationRequest mLocationRequest;
-    String lat, lng;
-    TextView txtOutputLat, txtOutputLon;
+
 
     // Dummy check to see if we have ACCESS_FINE_LOCATION Permission on SDK23+
     @TargetApi(Build.VERSION_CODES.M)
@@ -129,6 +128,8 @@ public class Advanced extends AppCompatActivity implements android.location.Loca
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_advanced);
 
+        altInFeet = Double.valueOf(0);
+
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -140,8 +141,9 @@ public class Advanced extends AppCompatActivity implements android.location.Loca
         locationTV = (TextView) findViewById(R.id.location);
 
 
-        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        provider = locationManager.getBestProvider(new Criteria(), false);
+
+
+
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
@@ -154,9 +156,13 @@ public class Advanced extends AppCompatActivity implements android.location.Loca
             // for ActivityCompat#requestPermissions for more details.
             return;
         }
+        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        provider = locationManager.getBestProvider(new Criteria(), false);
         Location location = locationManager.getLastKnownLocation(provider);
 
-        onLocationChanged(location);
+        if (location !=null) {
+            onLocationChanged(location);
+        }
 
 
         recommendedTimeDisplay = (TextView) findViewById(R.id.recommendedTimeDisplay);
@@ -406,11 +412,7 @@ public class Advanced extends AppCompatActivity implements android.location.Loca
                         // continue with delete
                     }
                 })
-//                .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
-//                    public void onClick(DialogInterface dialog, int which) {
-//                        // do nothing
-//                    }
-//                })
+
                 .setIcon(android.R.drawable.ic_dialog_alert)
                 .show();
 

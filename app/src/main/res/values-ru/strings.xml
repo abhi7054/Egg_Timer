@@ -8,16 +8,14 @@
     <string name="go">Идти</string>
     <string name="Stop">Стоп</string>
     <string name="slide_to_set_egg_boil_time">Авто для установки времени яйца кипятить</string>
-    <string name="about">About</string>
+    <string name="about">Около</string>
     <string name="you_ve_just_cooked_your_perfect_egg_take_a_snap_and_share_it_with_your_friends_using_perfectegg"> Вы только что приготовили свой ​​идеальный яйцо . Возьмите оснастки и поделиться им с друзьями с помощью #PerfectEgg</string>
     <string name="time_s_up">Время вышло!</string>
     <string name="snap_your_egg_and_share">Привязать яйцо и поделиться !</string>
     <string name="photo">Фото</string>
     <string name="the_perfect_egg_timer"> Совершенная Egg Timer</string>
     <string name="please_share_us">Пожалуйста, поделитесь с нами</string>
-    <string name="okay_we_admit_it_we_re_totally_obssessed_with_eggs_we_simply_love_em">Хорошо, мы это признать ... мы полностью obssessed с яйцами . Мы просто любим их</string>
-    <string name="but_hey_what_could_be_better_than_a_perfectly_cooked_egg_hard_or_soft_boiled_you_decide_but_how_should_you_cook_your_perfect_egg_we_ve_got_some_advice_for_you"> Но эй , что может быть лучше , чем тщательно приготовленное яйцо . Жесткий или всмятку , вы решаете . Но как вы должны приготовить идеальный яйцо ? У нас есть несколько советов для вас ...</string>
-    <string name="bring_the_water_up_to_a_boil_then_lower_it_to_a_rapid_simmer_add_the_eggs_to_the_pot_and_then_click_go_to_start_timing_if_you_re_just_cooking_one_or_two_eggs_five_minutes_is_perfect_for_a_runny_yolk_or_cook_as_long_as_seven_minutes_for_a_more_firmly_set_but_still_spoonable_yolk"> Доведите воду до кипения, затем опустите ее к быстрому кипят. Добавьте яйца в кастрюлю , а затем нажмите кнопку GO! чтобы начать отсчет времени. Если вы только варить одно или два яйца , пять минут идеально подходит для жидкого желтка , или варить до тех пор , как семь минут для более надежно установлен , но по-прежнему , желток ложкой .</string>
+
     <string name="back_to_timer">Вернуться к таймеру</string>
     <string name="share">доля</string>
     <string name="About_Perfect_Egg_Timer">О Совершенная Egg Timer</string>
@@ -28,4 +26,27 @@
     <string name="invite_dialog_title"> Вы получили приглашение</string>
     <string name="invite_friends"> Пригласить друзей</string>
     <string name="send_failed">Не удалось отправить приглашения</string>
+    <string name="About_Egg_Heading"> Мы любим яйца</string>
+    <string name="About_Egg_Heading2"> Вот как использовать идеальный Egg Timer закипеть свой ​​идеальный яйцо в базовом и расширенном режиме ...</string>
+    <string name="About_egg_cook_advanced_instructions">Оказывается, идеальный вареное яйцо таймер , зависит от многих факторов , как ли ваше яйцо было в холодильнике , его размер и даже высота вашего местоположения для приготовления пищи . Теперь мы не ожидаем, что вы на самом деле знаете свою высоту , но идеальный яйцо таймер , если вы позволите ему доступ . Кипение время может значительно варьироваться в зависимости от высоты над уровнем моря , поэтому используйте наш расширенный \' Вычислим время яйца \' и мы поместим наш продвинутый алгоритм для работы</string>
+    <string name="About_egg_cook_basic_instructions">Если вы только варить одно или два яйца , пять минут идеально подходит для жидкого желтка , или варить до тех пор , как семь минут для более надежно установлен , но по-прежнему , желток ложкой .</string>
+    <string name="About_egg_cook_general_instructions">Доведите воду до кипения, затем ниже (но не слишком много) к быстрому кипят. Добавьте яйца в кастрюлю, а затем нажмите кнопку GO! чтобы начать отсчет времени.</string>
+    <string name="accept_recommended_time">принимать</string>
+    <string name="altitude">высоты</string>
+    <string name="egg_size">размер яйца</string>
+    <string name="egg_temp">температура</string>
+    <string name="fridge">Холодильник</string>
+    <string name="hard">Жесткий</string>
+    <string name="i_d_like">мне бы хотелось</string>
+    <string name="large">большой</string>
+    <string name="let_us_calculate_for_you">Вычислим время яйца</string>
+    <string name="location">положение</string>
+    <string name="medium">средний</string>
+    <string name="recommended_time">Рекомендуемые:</string>
+    <string name="room">Комната</string>
+    <string name="select_from_the_following">Выберите одну из следующих</string>
+    <string name="small">Маленький</string>
+    <string name="soft">Мягкий</string>
+    <string name="spread_the_word">Мы упорно трудились, чтобы принести вам идеальный Egg Timer. Наши счастливые приложение загрузчики очень лояльны и мы хотели бы, чтобы вы присоединились их энтузиазм, рассказывая своим друзьям и семье об этом замечательном приложении. Она доступна только на Android прямо сейчас, так что если вы знаете, кто связан с Android телефон и любовь вареные яйца и немного веселья, пожалуйста, найдите время, чтобы разделить Совершенная Egg Timer прямо сейчас.</string>
+    <string name="time">Время</string>
 </resources>

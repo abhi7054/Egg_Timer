@@ -7,12 +7,16 @@ android {
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
 
+    lintOptions {
+        disable 'MissingTranslation'
+    }
+
     defaultConfig {
         applicationId "org.reallysimpleapps.eggtimer"
         minSdkVersion 16
         targetSdkVersion 23
-        versionCode 17
-        versionName "2.00.0"
+        versionCode 21
+        versionName "2.00.3"
     }
     buildTypes {
         release {
