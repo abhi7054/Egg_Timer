@@ -1,5 +1,7 @@
 <resources>
     <string name="banner_ad_unit_id" translatable="false">ca-app-pub-5658160199002627/1396870992</string>
+    <string name="banner_ad_unit_id_test" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="admob_app_id" translatable="false">ca-app-pub-5658160199002627~8920137792</string>
 
     <string name="app_name">Perfect Egg Timer</string>
     <string name="Egg_Timer_Alert">Egg Timer Alert!</string>

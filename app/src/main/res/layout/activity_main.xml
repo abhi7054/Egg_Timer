@@ -7,14 +7,14 @@
     android:layout_height="fill_parent"
     tools:context="org.reallysimpleapps.eggtimer.MainActivity">
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:background="@color/colorPrimary"
         android:minHeight="?attr/actionBarSize"
         app:contentInsetEnd="0dp"
-        app:contentInsetStart="0dp"></android.support.v7.widget.Toolbar>
+        app:contentInsetStart="0dp"></androidx.appcompat.widget.Toolbar>
 
 
     <ImageView

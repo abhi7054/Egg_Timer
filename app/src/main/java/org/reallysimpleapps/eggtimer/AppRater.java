@@ -1,14 +1,16 @@
 package org.reallysimpleapps.eggtimer;
 
-        import android.annotation.SuppressLint;
-        import android.app.AlertDialog;
-        import android.content.Context;
-        import android.content.DialogInterface;
-        import android.content.Intent;
-        import android.content.SharedPreferences;
-        import android.net.Uri;
-        import android.os.Build;
-        import android.text.format.DateUtils;
+
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.net.Uri;
+import android.os.Build;
+import android.text.format.DateUtils;
+
+import androidx.appcompat.app.AlertDialog;
 
 
 /**
@@ -54,6 +56,7 @@ public class AppRater {
 
     /**
      * Creates a new AppRater instance
+     *
      * @param context the Activity reference to use for this instance (usually the Activity you called this from)
      */
     public AppRater(final Context context) {
@@ -62,7 +65,8 @@ public class AppRater {
 
     /**
      * Creates a new AppRater instance
-     * @param context the Activity reference to use for this instance (usually the Activity you called this from)
+     *
+     * @param context     the Activity reference to use for this instance (usually the Activity you called this from)
      * @param packageName your application's package name that will be used to open the ratings page
      */
     public AppRater(final Context context, final String packageName) {
@@ -88,10 +92,9 @@ public class AppRater {
     }
 
 
-
-
     /**
      * Sets how many days to wait before users may be prompted
+     *
      * @param days the number of days to wait before showing the prompt
      */
     public void setDaysBeforePrompt(final int days) {
@@ -100,6 +103,7 @@ public class AppRater {
 
     /**
      * Sets how often users must have launched the app (i.e. called AppRater.show()) before they may be prompted
+     *
      * @param launches the number of launches to wait before showing the prompt
      */
     public void setLaunchesBeforePrompt(final int launches) {
@@ -118,9 +122,9 @@ public class AppRater {
     /**
      * Sets the given Strings to use for the prompt
      *
-     * @param title the title for the prompt window (as a string)
+     * @param title       the title for the prompt window (as a string)
      * @param explanation the explanatory text that will be shown inside the prompt window (as a string)
-     * @param buttonNow the caption for the `Rate now` button (as a string)
+     * @param buttonNow   the caption for the `Rate now` button (as a string)
      * @param buttonLater the caption for the `Maybe later` button (as a string)
      * @param buttonNever the caption for the `Never` button (as a string)
      */
@@ -135,50 +139,46 @@ public class AppRater {
     /**
      * Sets the Strings referenced by the given resource IDs to use for the prompt
      *
-     * @param title the title for the prompt window (as a resource ID)
+     * @param title       the title for the prompt window (as a resource ID)
      * @param explanation the explanatory text that will be shown inside the prompt window (as a resource ID)
-     * @param buttonNow the caption for the `Rate now` button (as a resource ID)
+     * @param buttonNow   the caption for the `Rate now` button (as a resource ID)
      * @param buttonLater the caption for the `Maybe later` button (as a resource ID)
      * @param buttonNever the caption for the `Never` button (as a resource ID)
      */
     public void setPhrases(final int title, final int explanation, final int buttonNow, final int buttonLater, final int buttonNever) {
         try {
             mText_title = mContext.getString(title);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             mText_title = DEFAULT_TEXT_TITLE;
         }
         try {
             mText_explanation = mContext.getString(explanation);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             mText_explanation = DEFAULT_TEXT_EXPLANATION;
         }
         try {
             mText_buttonNow = mContext.getString(buttonNow);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             mText_buttonNow = DEFAULT_TEXT_NOW;
         }
         try {
             mText_buttonLater = mContext.getString(buttonLater);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             mText_buttonLater = DEFAULT_TEXT_LATER;
         }
         try {
             mText_buttonNever = mContext.getString(buttonNever);
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             mText_buttonNever = DEFAULT_TEXT_NEVER;
         }
     }
 
     /**
      * Sets the given keys for the preferences that will be used
-     * @param group the preference group file that all values of this class go in
-     * @param dontShow the preference name for the dont-show flag
-     * @param launchCount the preference name for the launch counter
+     *
+     * @param group           the preference group file that all values of this class go in
+     * @param dontShow        the preference name for the dont-show flag
+     * @param launchCount     the preference name for the launch counter
      * @param firstLaunchTime the preference name for the first launch time value
      */
     public void setPreferenceKeys(String group, String dontShow, String launchCount, String firstLaunchTime) {
@@ -227,16 +227,13 @@ public class AppRater {
             if (System.currentTimeMillis() >= (firstLaunchTime + (mDaysBeforePrompt * DateUtils.DAY_IN_MILLIS))) { // wait at least x days
                 try {
                     return showDialog(mContext, editor, firstLaunchTime);
-                }
-                catch (Exception e) {
+                } catch (Exception e) {
                     return null;
                 }
-            }
-            else {
+            } else {
                 return null;
             }
-        }
-        else {
+        } else {
             return null;
         }
     }
@@ -258,8 +255,7 @@ public class AppRater {
         if (editor != null) {
             if (Build.VERSION.SDK_INT < 9) {
                 editor.commit();
-            }
-            else {
+            } else {
                 editor.apply();
             }
         }

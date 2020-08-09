@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="About_Egg_Heading">Nous aimons les œufs</string>
+    <string name="About_Egg_Heading2">Voici comment utiliser la minuterie Egg Parfait pour faire bouillir votre oeuf parfait en mode de base et avancé ...</string>
+    <string name="About_Perfect_Egg_Timer">A propos de Parfait Egg Timer</string>
+    <string name="About_egg_cook_advanced_instructions">Il se trouve la minuterie d\' œuf à la coque parfait dépend de nombreux facteurs , comme si votre œuf a été dans le réfrigérateur , sa taille et même l\'altitude de l\'emplacement de votre cuisine. Maintenant, nous ne nous attendons pas que vous sachiez réellement votre altitude , mais le Egg Timer Perfect si vous lui permettre l\'accès . Temps de cuisson peut varier de manière significative en raison de l\'altitude , donc utiliser notre avancée » Calculons le temps d\'oeuf \' et nous allons mettre notre algorithme avancé pour travailler</string>
+    <string name="About_egg_cook_basic_instructions"> Si vous êtes juste cuire un ou deux œufs , cinq minutes est parfait pour un jaune qui coule, ou cuire aussi longtemps que sept minutes pour une plus fermement fixée, mais encore spoonable , le jaune .</string>
+    <string name="About_egg_cook_general_instructions">Porter l\'eau à ébullition, puis baisser (mais pas trop) à ébullition rapide. Ajouter les oeufs dans la casserole, puis cliquez sur GO! pour démarrer la synchronisation.</string>
+    <string name="Again">Encore?</string>
+    <string name="Egg_Timer_Alert">Egg Alert minuterie !</string>
+    <string name="Go">Aller!</string>
+    <string name="Stop">Arrêtez</string>
+    <string name="Your_egg_is_boiled_and_ready_to_enjoy">Votre oeuf est cuit et prêt à profiter</string>
+    <string msgid="7903180715631665059" name="abc_action_bar_home_description">"Revenir à l\'accueil"</string>
+    <string msgid="6794660482873516081" name="abc_action_bar_up_description">"Revenir en haut de la page"</string>
+    <string msgid="1155814932213556626" name="abc_action_menu_overflow_description">"Autres options"</string>
+    <string msgid="2571498368472823490" name="abc_action_mode_done">"OK"</string>
+    <string msgid="3732416590524162402" name="abc_activity_chooser_view_see_all">"Tout afficher"</string>
+    <string msgid="1798588241954930982" name="abc_activitychooserview_choose_application">"Sélectionner une application"</string>
+    <string msgid="3403923230105792483" name="abc_capital_off">"NON"</string>
+    <string msgid="7831734969929204599" name="abc_capital_on">"OUI"</string>
+    <string msgid="5725160506500770567" name="abc_menu_alt_shortcut_label">"Alt+"</string>
+    <string msgid="944415252197684443" name="abc_menu_ctrl_shortcut_label">"Ctrl+"</string>
+    <string msgid="129742188101734366" name="abc_menu_delete_shortcut_label">"supprimer"</string>
+    <string msgid="6840127756824236027" name="abc_menu_enter_shortcut_label">"entrée"</string>
+    <string msgid="4974283687810130415" name="abc_menu_function_shortcut_label">"Fonction+"</string>
+    <string msgid="8046416353848716905" name="abc_menu_meta_shortcut_label">"Méta+"</string>
+    <string msgid="3271697756921353410" name="abc_menu_shift_shortcut_label">"Maj+"</string>
+    <string msgid="2304645930658438191" name="abc_menu_space_shortcut_label">"espace"</string>
+    <string msgid="8327365089695024394" name="abc_menu_sym_shortcut_label">"Sym+"</string>
+    <string msgid="3570106412128999382" name="abc_prepend_shortcut_label">"Menu+"</string>
+    <string msgid="940844115270746197" name="abc_search_hint">"Rechercher…"</string>
+    <string msgid="1769270744562318534" name="abc_searchview_description_clear">"Effacer la requête"</string>
+    <string msgid="908784302972860853" name="abc_searchview_description_query">"Requête de recherche"</string>
+    <string msgid="5466662225065974044" name="abc_searchview_description_search">"Rechercher"</string>
+    <string msgid="8203855622131699655" name="abc_searchview_description_submit">"Envoyer la requête"</string>
+    <string msgid="3478748990613108725" name="abc_searchview_description_voice">"Recherche vocale"</string>
+    <string msgid="2650565705514630347" name="abc_shareactionprovider_share_with">"Partager avec"</string>
+    <string msgid="9009661856846212431" name="abc_shareactionprovider_share_with_application">"Partager avec <ns1:g id="APPLICATION_NAME">%s</ns1:g>"</string>
+    <string msgid="6389460216547290468" name="abc_toolbar_collapse_description">"Réduire"</string>
+    <string name="about">Sur</string>
+    <string name="accept_recommended_time">Acceptez</string>
+    <string name="altitude">Altitude</string>
+    <string name="app_name">Egg Timer Parfait Egg</string>
+    <string name="back_to_timer">Retour à la minuterie</string>
+    <string msgid="8585111718777012708" name="common_google_play_services_enable_button">"Activer"</string>
+    <string msgid="7045129128108380659" name="common_google_play_services_enable_text">"<ns1:g id="APP_NAME">%1$s</ns1:g> ne fonctionnera pas tant que vous n\'aurez pas activé les services Google Play."</string>
+    <string msgid="3147157405986503375" name="common_google_play_services_enable_title">"Activer les services Google Play"</string>
+    <string msgid="9115728400623041681" name="common_google_play_services_install_button">"Installer"</string>
+    <string msgid="8179894293032530091" name="common_google_play_services_install_text">"<ns1:g id="APP_NAME">%1$s</ns1:g> ne fonctionnera pas sans les services Google Play, qui ne sont pas installés sur votre appareil."</string>
+    <string msgid="7442193194585196676" name="common_google_play_services_install_title">"Installer les services Google Play"</string>
+    <string msgid="4293541511340436975" name="common_google_play_services_notification_channel_name">"Disponibilité des services Google Play"</string>
+    <string msgid="180394615667698242" name="common_google_play_services_notification_ticker">"Erreur liée aux services Google Play"</string>
+    <string msgid="2518680582564677258" name="common_google_play_services_unknown_issue">"L\'application <ns1:g id="APP_NAME">%1$s</ns1:g> rencontre des problèmes avec les services Google Play. Veuillez réessayer."</string>
+    <string msgid="5501187292256987189" name="common_google_play_services_unsupported_text">"<ns1:g id="APP_NAME">%1$s</ns1:g> ne fonctionnera pas sans les services Google Play, qui ne sont pas compatibles avec votre appareil."</string>
+    <string msgid="8172070149091615356" name="common_google_play_services_update_button">"Mettre à jour"</string>
+    <string msgid="7773943415006962566" name="common_google_play_services_update_text">"<ns1:g id="APP_NAME">%1$s</ns1:g> ne fonctionnera pas tant que vous n\'aurez pas mis à jour les services Google Play."</string>
+    <string msgid="8706675115216073244" name="common_google_play_services_update_title">"Mettre à jour les services Google Play"</string>
+    <string msgid="7894275749778928941" name="common_google_play_services_updating_text">"<ns1:g id="APP_NAME">%1$s</ns1:g> ne fonctionnera pas sans les services Google Play, qui sont en cours de mise à jour."</string>
+    <string msgid="2804989272736383918" name="common_google_play_services_wear_update_text">"La nouvelle version des services Google Play est nécessaire. Elle sera bientôt installée automatiquement."</string>
+    <string msgid="5201977337835724196" name="common_open_on_phone">"Ouvrir sur le téléphone"</string>
+    <string msgid="3441753203274453993" name="common_signin_button_text">"Se connecter"</string>
+    <string msgid="669893613918351210" name="common_signin_button_text_long">"Se connecter avec Google"</string>
+    <string name="egg_size">Egg size</string>
+    <string name="egg_temp">Température</string>
+    <string name="fridge">Frigo</string>
+    <string name="go">Aller!</string>
+    <string name="hard">Ferme</string>
+    <string name="i_d_like">J\'aimerais</string>
+    <string name="invitation_message"> «Je suis lovin \' cette appli Minuteur Parfait Egg gratuit . Donnez-lui un aller! "</string>
+    <string name="invitation_subject"> Essayez cette grande application Egg Timer</string>
+    <string name="invitation_title">Envoyer Inviter Egg Timer</string>
+    <string name="invite"> Envoyer des invitations</string>
+    <string name="invite_dialog_title"> Vous avez obtenu une invitation </string>
+    <string name="invite_friends"> Inviter des amis</string>
+    <string name="large">Grand</string>
+    <string name="let_us_calculate_for_you">Calculons le temps d\'oeuf</string>
+    <string name="location">Emplacement</string>
+    <string name="medium">Moyen</string>
+    <string name="photo">photo</string>
+    <string name="please_share_us">S\'il vous plaît nous partager</string>
+    <string name="recommended_time">Conseillé:</string>
+    <string name="room">Chambre</string>
+    <string msgid="368094699078615544" name="s1">"Enregistrer l\'image"</string>
+    <string msgid="4550830452390689489" name="s2">"Autoriser l\'annonce à stocker l\'image dans la galerie d\'images ?"</string>
+    <string msgid="2435407834265420668" name="s3">"Accepter"</string>
+    <string msgid="9167523597401839819" name="s4">"Refuser"</string>
+    <string msgid="1566682516266724847" name="s5">"Créer un événement d\'agenda"</string>
+    <string msgid="5996672174517137271" name="s6">"Autoriser l\'annonce à créer un événement d\'agenda ?"</string>
+    <string msgid="7163549807207034258" name="s7">"Annonce test"</string>
+    <string msgid="730395136688082741" name="search_menu_title">"Rechercher"</string>
+    <string name="select_from_the_following">Sélectionnez parmi les options suivantes</string>
+    <string name="send_failed">Échec de l\'envoi des invitations</string>
+    <string name="share">partager</string>
+    <string name="slide_to_set_egg_boil_time">Faites glisser pour définir le temps de faire bouillir des oeufs</string>
+    <string name="small">Petit</string>
+    <string name="snap_your_egg_and_share"> Enclenchez votre oeuf et partager !</string>
+    <string name="soft">Doux</string>
+    <string name="spread_the_word">Nous avons travaillé dur pour vous apporter le Egg Timer parfait. Notre application téléchargeurs heureux sont extrêmement fidèles et nous aimerions vous joindre à leur enthousiasme en parlant à vos amis et votre famille sur cette merveilleuse application. Il est disponible uniquement sur Android en ce moment, donc si vous connaissez d\'autres avec un téléphone Android et un amour des œufs durs et un peu de plaisir, s\'il vous plaît prendre un moment pour partager le Egg Timer parfait maintenant.</string>
+    <string msgid="8106346172024741305" name="status_bar_notification_info_overflow">"999+"</string>
+    <string name="the_perfect_egg_timer"> Le Egg Timer Parfait</string>
+    <string name="time">Temps</string>
+    <string name="time_s_up">Le temps est écoulé!</string>
+    <string name="you_ve_just_cooked_your_perfect_egg_take_a_snap_and_share_it_with_your_friends_using_perfectegg">Vous venez de cuire votre oeuf parfait. Prenez une photo et la partager avec vos amis en utilisant #PerfectEgg</string>
+</resources>

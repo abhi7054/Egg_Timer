@@ -11,8 +11,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Vibrator;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -22,10 +22,10 @@ import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.google.android.gms.appinvite.AppInvite;
-import com.google.android.gms.appinvite.AppInviteInvitation;
-import com.google.android.gms.appinvite.AppInviteInvitationResult;
+//
+//import com.google.android.gms.appinvite.AppInvite;
+//import com.google.android.gms.appinvite.AppInviteInvitation;
+//import com.google.android.gms.appinvite.AppInviteInvitationResult;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.ResultCallback;
@@ -34,7 +34,7 @@ import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener , GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
     SeekBar timerSeekBar;
     TextView timerTextView;
@@ -268,16 +268,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         toolbar.setLogo(R.mipmap.ic_launcher);
 
 
-        // Create an auto-managed GoogleApiClient with acccess to App Invites.
-        GoogleApiClient mGoogleApiClient = new GoogleApiClient.Builder(this)
-                .addApi(AppInvite.API)
-                .enableAutoManage(this, this)
-                .build();
+//        GoogleApiClient mGoogleApiClient = new GoogleApiClient.Builder(this)
+////                .addApi(AppInvite.API)
+//                .enableAutoManage(this, this)
+//                .build();
 
         // Check for App Invite invitations and launch deep-link activity if possible.
         // Requires that an Activity is registered in AndroidManifest.xml to handle
         // deep-link URLs.
-        boolean autoLaunchDeepLink = true;
+        /*boolean autoLaunchDeepLink = true;
         AppInvite.AppInviteApi.getInvitation(mGoogleApiClient, this, autoLaunchDeepLink)
                 .setResultCallback(
                         new ResultCallback<AppInviteInvitationResult>() {
@@ -288,7 +287,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                 // here, but we could set that to false and manually choose
                                 // an Activity to launch to handle the deep link here.
                             }
-                        });
+                        });*/
 
 
         //check whether vibrator exists on running device and log
@@ -376,7 +375,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-    public void onInviteClicked(View v) {
+    /*public void onInviteClicked(View v) {
 
         Intent intent = new AppInviteInvitation.IntentBuilder(getString(R.string.invitation_title))
                 .setMessage(getString(R.string.invitation_message))
@@ -385,7 +384,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 .setCallToActionText(getString(R.string.invitation_cta))
                 .build();
         startActivityForResult(intent, REQUEST_INVITE);
-    }
+    }*/
 
 
     @Override
@@ -399,10 +398,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 // The ids array contains the unique invitation ids for each invitation sent
                 // (one for each contact select by the user). You can use these for analytics
                 // as the ID will be consistent on the sending and receiving devices.
-                String[] ids = AppInviteInvitation.getInvitationIds(resultCode, data);
-                inviteFriends.setVisibility(View.INVISIBLE);
-
-                Log.i("TAG", getString(R.string.sent_invitations_fmt, ids.length));
+//                String[] ids = AppInviteInvitation.getInvitationIds(resultCode, data);
+//                inviteFriends.setVisibility(View.INVISIBLE);
+//
+//                Log.i("TAG", getString(R.string.sent_invitations_fmt, ids.length));
 
 
             } else {

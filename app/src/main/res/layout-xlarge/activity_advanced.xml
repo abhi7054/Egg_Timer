@@ -7,7 +7,7 @@
                 android:layout_height="fill_parent"
                 tools:context="org.reallysimpleapps.eggtimer.MainActivity">
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="56dp"
@@ -51,7 +51,6 @@
         android:layout_centerHorizontal="true"
         ads:adSize="SMART_BANNER"
         ads:adUnitId="@string/banner_ad_unit_id">
-
     </com.google.android.gms.ads.AdView>
 
 

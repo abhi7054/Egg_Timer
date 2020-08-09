@@ -2,97 +2,60 @@ package org.reallysimpleapps.eggtimer;
 
 import android.Manifest;
 import android.annotation.TargetApi;
-import android.app.DialogFragment;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
 import android.location.Address;
 import android.location.Criteria;
 import android.location.Geocoder;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.Build;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.EditText;
-import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.location.LocationListener;
-import com.google.android.gms.location.LocationRequest;
-import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 import java.io.IOException;
-import java.io.Serializable;
 import java.util.List;
 import java.util.Locale;
 
 public class Advanced extends AppCompatActivity implements android.location.LocationListener {
 
     final private int REQUEST_CODE_ASK_PERMISSIONS = 123;
-
     LocationManager locationManager;
     String provider;
     String subLocality;
-
     TextView altitudeMetersTV;
     TextView altitudeFeetTV;
     TextView locationTV;
-
     Double altInFeet;
-
     int masterBoilTime;
     int baseTimeSeconds = 180;
-
-
     int eggSizeTimeSeconds = 20; // sets standard egg to medium
     int eggTempTimeSeconds = 60; // sets standard egg to fridge
     int eggAltitudeTime = 0; // sea level initially
     int eggHardMedSoftTimeSeconds = 120; // sets standard egg to medium
-
     TextView recommendedTimeDisplay; // in mins
 
-    Location mLastLocation;
-    private GoogleApiClient mGoogleApiClient;
-    private LocationRequest mLocationRequest;
+    boolean accessLocationSorted = false;
 
-
-    // Dummy check to see if we have ACCESS_FINE_LOCATION Permission on SDK23+
-    @TargetApi(Build.VERSION_CODES.M)
-    private void insertDummyContactWrapper() {
-        int hasWriteContactsPermission = checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION);
-        if (hasWriteContactsPermission != PackageManager.PERMISSION_GRANTED) {
-            if (!shouldShowRequestPermissionRationale(Manifest.permission.ACCESS_FINE_LOCATION)) {
-                showMessageOKCancel("Please allow the Perfect Egg Timer access to location to know your egg cooking altitude",
-                        new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
-                                        REQUEST_CODE_ASK_PERMISSIONS);
-                            }
-                        });
-                return;
-            }
-            requestPermissions(new String[]{Manifest.permission.WRITE_CONTACTS},
-                    REQUEST_CODE_ASK_PERMISSIONS);
-            return;
-        }
-        // insertDummyContact();
-    }
 
     private void showMessageOKCancel(String message, DialogInterface.OnClickListener okListener) {
         new AlertDialog.Builder(this)
@@ -103,22 +66,53 @@ public class Advanced extends AppCompatActivity implements android.location.Loca
                 .show();
     }
 
-    // No matter Allow or Deny is chosen, Activity's onRequestPermissionsResult will always be called to inform a result which we can check from the 3rd parameter, grantResults
-    @Override
-    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
-        switch (requestCode) {
-            case REQUEST_CODE_ASK_PERMISSIONS:
-                if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    // Permission Granted
-                    // insertDummyContact();
-                } else {
-                    // Permission Denied
-                    Toast.makeText(this, "Location access denied meaning a slightly less accurate boil time prediction", Toast.LENGTH_SHORT)
-                            .show();
+    // Called when the user is performing an action which requires the app to read the
+    // user's contacts
+    public void getPermissionToAccessLocation() {
+        // 1) Use the support library version ContextCompat.checkSelfPermission(...) to avoid
+        // checking the build version since Context.checkSelfPermission(...) is only available
+        // in Marshmallow
+        // 2) Always check for permission (even if permission has already been granted)
+        // since the user can revoke permissions at any time through Settings
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED) {
+
+            // The permission is NOT already granted.
+            // Check if the user has been asked about this permission already and denied
+            // it. If so, we want to give more explanation about why the permission is needed.
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                if (shouldShowRequestPermissionRationale(
+                        Manifest.permission.ACCESS_FINE_LOCATION)) {
+                    // Show our own UI to explain to the user why we need to read the contacts
+                    // before actually requesting the permission and showing the default UI
+                    Toast.makeText(this, "Give us your location to make the most of the Perfect Egg Timer", Toast.LENGTH_SHORT).show();
                 }
-                break;
-            default:
-                super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+            }
+
+            // Fire off an async request to actually get the permission
+            // This will show the standard permission request dialog UI
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                requestPermissions(new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                        REQUEST_CODE_ASK_PERMISSIONS);
+            }
+        }
+    }
+
+    // Callback with the request from calling requestPermissions(...)
+    @Override
+    public void onRequestPermissionsResult(int requestCode,
+                                           @NonNull String permissions[],
+                                           @NonNull int[] grantResults) {
+        // Make sure it's our original FINE ACCESS request
+        if (requestCode == REQUEST_CODE_ASK_PERMISSIONS) {
+            if (grantResults.length == 1 &&
+                    grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                Toast.makeText(this, "Fine Access permission granted", Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "Allow location to use egg altitude in cooking time", Toast.LENGTH_LONG).show();
+            }
+        } else {
+            super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         }
     }
 
@@ -135,19 +129,20 @@ public class Advanced extends AppCompatActivity implements android.location.Loca
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); // something to do with using NoActionBar in styles, but will always be true here I think
 
-
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
         altitudeMetersTV = (TextView) findViewById(R.id.altitudeMeters);
         altitudeFeetTV = (TextView) findViewById(R.id.altitudeFeet);
         locationTV = (TextView) findViewById(R.id.location);
 
+        getPermissionToAccessLocation();
 
-
-
-
-
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        provider = locationManager.getBestProvider(new Criteria(), false);
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
-            insertDummyContactWrapper();
+            getPermissionToAccessLocation();
             //    ActivityCompat#requestPermissions
             // here to request the missing permissions, and then overriding
             //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
@@ -156,11 +151,9 @@ public class Advanced extends AppCompatActivity implements android.location.Loca
             // for ActivityCompat#requestPermissions for more details.
             return;
         }
-        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
-        provider = locationManager.getBestProvider(new Criteria(), false);
         Location location = locationManager.getLastKnownLocation(provider);
 
-        if (location !=null) {
+        if (location != null) {
             onLocationChanged(location);
         }
 
@@ -193,6 +186,7 @@ public class Advanced extends AppCompatActivity implements android.location.Loca
                     if (index == 2) {
                         eggSizeTimeSeconds = 40; // large egg
                         updateRecommendedTime();
+
                     }
                 }
             });
@@ -289,18 +283,16 @@ public class Advanced extends AppCompatActivity implements android.location.Loca
     protected void onPause() {
         super.onPause();
 
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            locationManager.removeUpdates(this);
+        }
+        else {
             // TODO: Consider calling
-            insertDummyContactWrapper();
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
+            getPermissionToAccessLocation();
+         
             return;
         }
-        locationManager.removeUpdates(this);
+
 
     }
 
@@ -308,20 +300,20 @@ public class Advanced extends AppCompatActivity implements android.location.Loca
     protected void onResume() {
         super.onResume();
 
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            insertDummyContactWrapper();
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            return;
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            locationManager.requestLocationUpdates(provider, 400, 1, this);
         }
-        locationManager.requestLocationUpdates(provider, 400, 1, this);
+            else {
+            // TODO: Consider calling
+            // getPermissionToAccessLocation();
+
+
+            return;
+
+        }
 
     }
+
 
     @Override
     public void onLocationChanged(Location location) {
@@ -406,7 +398,7 @@ public class Advanced extends AppCompatActivity implements android.location.Loca
 
         new AlertDialog.Builder(this)
                 .setTitle("Perfect Egg Timer algorithm")
-                .setMessage("We help you boil your pefect egg by taking all relevant factors into account. We even measure your actual location altitude, because how high you are can alter boil times by well over a minute!  Try it. We're truly eggcited to hear your feedback :-) ")
+                .setMessage("REMEMBER: Timings are based on water at boiling point before placing egg in pan.\n\nWe help you boil your pefect egg by taking all relevant factors into account. We even measure your actual location altitude, because how high you are can alter boil times by well over a minute!  Try it. We're truly eggcited to hear your feedback :-) ")
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         // continue with delete
@@ -417,4 +409,31 @@ public class Advanced extends AppCompatActivity implements android.location.Loca
                 .show();
 
     }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.menu_about) {
+            Intent intent = new Intent(this, About.class);
+            startActivity(intent);
+            return true;
+        }
+
+
+        return super.onOptionsItemSelected(item);
+    }
+
+
 }
